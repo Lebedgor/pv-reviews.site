@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo & Video Reviews for WooCommerce — PVR Media Reviews</title>
+  <meta name="description" content="Add photo and video reviews to WooCommerce and unlock SEO review pages, custom ratings, coupons, analytics, and more with PVR Pro.">
+  <link rel="canonical" href="https://pv-reviews.site/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Photo & Video Reviews for WooCommerce — PVR Media Reviews">
+  <meta property="og:description" content="Add photo and video reviews to WooCommerce and unlock SEO review pages, custom ratings, coupons, analytics, and more with PVR Pro.">
+  <meta property="og:image" content="https://pv-reviews.site/assets/main_wide_banner.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pv-reviews.site/">
+  <meta property="og:site_name" content="PVR Media Reviews">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Photo & Video Reviews for WooCommerce — PVR Media Reviews">
+  <meta name="twitter:description" content="Add photo and video reviews to WooCommerce and unlock SEO review pages, custom ratings, coupons, analytics, and more with PVR Pro.">
+  <meta name="twitter:image" content="https://pv-reviews.site/assets/main_wide_banner.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PVR Media Reviews",
+    "applicationCategory": "WordPressPlugin",
+    "operatingSystem": "WordPress",
+    "offers": {
+      "@type": "Offer",
+      "price": "39",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "58",
+      "bestRating": "5"
+    },
+    "description": "Photo and video reviews plugin for WooCommerce with SEO review pages, custom ratings, coupons, analytics, and media gallery.",
+    "url": "https://pv-reviews.site/",
+    "screenshot": "https://pv-reviews.site/assets/main_wide_banner.jpg"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can customers upload photos to WooCommerce reviews?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PVR Media Reviews adds a photo and video upload field directly to the WooCommerce review form, so customers can attach real photos and videos of the product to their review with no extra setup required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this plugin slow down my site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All video compression happens in the visitor's browser before upload, so your server never processes raw video files. There is no FFmpeg dependency and no extra CPU load."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this plugin help my store get more organic search traffic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, with the Pro version. The All Reviews page lets shoppers filter reviews by category, rating, and helpfulness, and each filtered view gets its own auto-generated SEO title and meta description."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this plugin replace WooCommerce reviews?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The plugin extends native WooCommerce reviews stored as WordPress comments. All reviews remain fully compatible with WooCommerce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does video compression work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Videos are compressed entirely in the browser using the MediaRecorder API and Canvas. No server-side processing is required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What video formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The plugin supports MP4 and WebM formats. Chrome/Edge produce WebM, Safari produces MP4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a Pro version?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Pro version adds custom criteria ratings, email reminders, review coupons, analytics, carousel/grid layouts, and an SEO-friendly All Reviews page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the requirements to install PVR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WordPress 6.0 or later, WooCommerce 7.0 or later, and PHP 7.1 or higher."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I start with the free version and upgrade later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can start with the free version and upgrade to PVR Pro whenever you need additional features. Your existing reviews and settings remain available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the $39 Pro license include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The $39 license is a one-time payment for use on a single WooCommerce site. You get a lifetime Pro license with every Pro feature — SEO Review Pages, custom criteria ratings, email reminders, review coupons, analytics dashboard, and carousel/grid layouts — plus updates and support. No renewals, no hidden fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the $39 payment recurring?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It is a one-time payment. As a founding customer you keep your license — with updates and support — forever."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PVR Pro a subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not for founding customers. The first 100 Pro licenses are lifetime: one payment, with updates and support included forever. After those are sold, PVR Pro will move to an annual subscription for new customers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after the first 100 licenses are sold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing changes if you already own a license — it stays lifetime forever. New customers will join through an annual subscription. Buying now locks in lifetime access for your site."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many sites can I use Pro on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One Pro license is for one website."
+        }
+      }
+    ]
+  }
+  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SVBX2VGG58"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SVBX2VGG58');
+</script>
+
+</head>
+<body>
+
+  <div id="pv-header"></div>
+  <script src="components/include.js"></script>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero">
+    <div class="container hero__inner">
+      <div class="hero__visual" data-aos="fade-up" data-aos-duration="700">
+        <img src="assets/main_wide_banner.jpg" alt="PVR Media Reviews — photo and video reviews plugin for WooCommerce" class="hero__banner">
+      </div>
+      <div class="hero__content" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Self-Hosted &amp; Zero Server Load
+        </div>
+        <h1 class="hero__title">
+          The First WooCommerce Review Plugin with <span class="hero__title-accent">In-Browser Video Compression</span>
+        </h1>
+        <p class="hero__subtitle">
+          Collect authentic customer photo and video reviews without slow servers, FFmpeg dependencies, or expensive monthly SaaS subscriptions. Boost store conversions, get Google Star Rich Snippets, and scale organic search traffic.
+        </p>
+        <div class="hero__actions">
+          <a href="#pricing" class="btn btn--primary">Get PVR Pro — $39</a>
+          <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Download Free Plugin</a>
+        </div>
+        <p class="hero__note">One-time payment &middot; 100% data ownership &middot; Free version on WordPress.org</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SAAS VS PVR COMPARISON ===== -->
+  <section id="comparison" class="saas-comp">
+    <div class="container">
+      <div class="saas-comp__header" data-aos="fade-up">
+        <span class="ps__label">Self-Hosted vs Cloud SaaS</span>
+        <h2 class="ps__title">Why Pay $50–$300/Month for Cloud Review Platforms?</h2>
+        <p class="ps__subtitle">Compare PVR's self-hosted in-browser processing with expensive monthly SaaS services like Judge.me, Yotpo, or Stamped.</p>
+      </div>
+      <div class="saas-comp__table-wrapper" data-aos="fade-up" data-aos-delay="100">
+        <table class="saas-comp__table">
+          <thead>
+            <tr>
+              <th>Features &amp; Architecture</th>
+              <th class="saas-comp__col--pvr">PVR Media Reviews</th>
+              <th class="saas-comp__col--saas">Cloud SaaS (Judge.me, Yotpo)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Pricing Model</strong></td>
+              <td class="saas-comp__cell--pvr">One-time $39 purchase (or Free)</td>
+              <td class="saas-comp__cell--saas">$15 – $300+ / month recurring</td>
+            </tr>
+            <tr>
+              <td><strong>Video Processing &amp; Compression</strong></td>
+              <td class="saas-comp__cell--pvr"><span class="saas-comp__check">&#10003;</span> In-Browser (0% server load, no FFmpeg)</td>
+              <td class="saas-comp__cell--saas"><span class="saas-comp__cross">&times;</span> Cloud servers / heavy external scripts</td>
+            </tr>
+            <tr>
+              <td><strong>Data Ownership &amp; Privacy</strong></td>
+              <td class="saas-comp__cell--pvr"><span class="saas-comp__check">&#10003;</span> 100% Self-Hosted (Native WP Comments)</td>
+              <td class="saas-comp__cell--saas"><span class="saas-comp__cross">&times;</span> Locked in external 3rd-party cloud</td>
+            </tr>
+            <tr>
+              <td><strong>Page Speed Impact</strong></td>
+              <td class="saas-comp__cell--pvr"><span class="saas-comp__check">&#10003;</span> Ultra-fast native rendering</td>
+              <td class="saas-comp__cell--saas"><span class="saas-comp__cross">&times;</span> Heavy tracking JS &amp; iframes</td>
+            </tr>
+            <tr>
+              <td><strong>Google Star Rich Snippets (Schema.org JSON-LD)</strong></td>
+              <td class="saas-comp__cell--pvr"><span class="saas-comp__check">&#10003;</span> Built-in (Yoast &amp; Rank Math ready)</td>
+              <td class="saas-comp__cell--pvr"><span class="saas-comp__check">&#10003;</span> Supported</td>
+            </tr>
+            <tr>
+              <td><strong>Store-Wide SEO Category Review Hub</strong></td>
+              <td class="saas-comp__cell--pvr"><span class="saas-comp__check">&#10003;</span> Dedicated indexable category pages</td>
+              <td class="saas-comp__cell--saas"><span class="saas-comp__cross">&times;</span> Reviews trapped inside product tabs</td>
+            </tr>
+            <tr>
+              <td><strong>Automated Review Reminders &amp; Coupons</strong></td>
+              <td class="saas-comp__cell--pvr"><span class="saas-comp__check">&#10003;</span> Native WooCommerce coupons &amp; emails</td>
+              <td class="saas-comp__cell--saas"><span class="saas-comp__check">&#10003;</span> Available only on higher tier plans</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ROI / Savings Callout -->
+      <div class="saas-comp__roi" data-aos="fade-up" data-aos-delay="150">
+        <div class="saas-comp__roi-text">
+          <h3 class="saas-comp__roi-title">Calculate Your 3-Year Store Savings</h3>
+          <p class="saas-comp__roi-desc">A typical store using Judge.me or Yotpo at $49/mo spends over $1,764 in 3 years. With PVR Pro ($39 one-time), you own the software forever and keep your profit margins.</p>
+        </div>
+        <div class="saas-comp__roi-calc">
+          <div class="saas-comp__roi-stat">
+            <span class="saas-comp__roi-num">$1,725+</span>
+            <span class="saas-comp__roi-label">Saved over 3 years</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SEO REVIEW PAGES (Pro highlight) ===== -->
+  <section id="seo-pages" class="seo-pages">
+    <div class="container">
+      <div class="ps__header" data-aos="fade-up">
+        <span class="ps__label">PVR PRO</span>
+        <h2 class="ps__title">Turn Your Customer Reviews Into SEO Landing Pages</h2>
+        <p class="ps__subtitle">Your customer reviews shouldn't be trapped inside individual product pages. PVR Pro creates a dedicated All Reviews page where shoppers can filter reviews by product category, rating, and helpfulness.</p>
+      </div>
+      <div class="seo-pages__body" data-aos="fade-up" data-aos-delay="100">
+        <p class="seo-pages__text">Each filtered category view can have its own SEO title and meta description, generated from templates you control. This gives you dedicated, SEO-friendly review pages built from real customer feedback.</p>
+        <div class="seo-pages__flow">
+          <div class="seo-pages__step">
+            <div class="seo-pages__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+            </div>
+            <span class="seo-pages__step-label">Customer reviews</span>
+          </div>
+          <div class="seo-pages__arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+          <div class="seo-pages__step">
+            <div class="seo-pages__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            </div>
+            <span class="seo-pages__step-label">Category filter</span>
+          </div>
+          <div class="seo-pages__arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+          <div class="seo-pages__step">
+            <div class="seo-pages__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <span class="seo-pages__step-label">Dedicated review URL</span>
+          </div>
+          <div class="seo-pages__arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+          <div class="seo-pages__step">
+            <div class="seo-pages__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </div>
+            <span class="seo-pages__step-label">Custom SEO title &amp; description</span>
+          </div>
+          <div class="seo-pages__arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+          <div class="seo-pages__step seo-pages__step--final">
+            <div class="seo-pages__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <span class="seo-pages__step-label">SEO-friendly landing page</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEY FEATURES ===== -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="features__header" data-aos="fade-up">
+        <h2 class="features__title">Everything you need for media reviews</h2>
+        <p class="features__subtitle">Powerful tools to collect, display, and manage photo and video reviews on your WooCommerce store.</p>
+      </div>
+
+      <!-- CORE FEATURES (Free) -->
+      <div class="features__group" data-aos="fade-up">
+        <div class="features__group-header">
+          <h3 class="features__group-title">Core Features</h3>
+          <span class="features__group-badge">Free</span>
+        </div>
+      </div>
+
+      <div class="features__row features__row--normal" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">01</span>
+          <h3 class="features__heading">Photo &amp; Video Reviews</h3>
+          <p class="features__desc">Customers attach real photos and videos directly to their review — no separate uploader, no extra steps.</p>
+        </div>
+        <div class="features__visual">
+          <img src="assets/screenshot-1.jpg" alt="WooCommerce photo and video review upload form" loading="lazy">
+        </div>
+      </div>
+
+      <div class="features__row features__row--reverse" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">02</span>
+          <h3 class="features__heading">Client-Side Compression</h3>
+          <p class="features__desc">Large videos are compressed right in the browser before upload. Compression threshold and quality are fully configurable in plugin settings.</p>
+        </div>
+        <div class="features__visual">
+          <img src="assets/screenshot-3.jpg" alt="WooCommerce video compression settings in plugin dashboard" loading="lazy">
+        </div>
+      </div>
+
+      <div class="features__row features__row--normal" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">03</span>
+          <h3 class="features__heading">Media Gallery</h3>
+          <p class="features__desc">All photo and video reviews for a product are displayed in a clean, browsable gallery with helpful voting.</p>
+        </div>
+        <div class="features__visual">
+          <img src="assets/screenshot-7.jpg" alt="WooCommerce media gallery showing customer photo and video reviews" loading="lazy">
+        </div>
+      </div>
+
+      <div class="features__row features__row--reverse" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">04</span>
+          <h3 class="features__heading">Detailed Review Modal &amp; Video Player</h3>
+          <p class="features__desc">Click any review to open an interactive modal with full-size high-res photos, built-in HTML5 video player, author details, and verified purchase badges.</p>
+        </div>
+        <div class="features__visual">
+          <img src="assets/screenshot-5.jpg" alt="WooCommerce detailed review modal with full-size media preview" loading="lazy">
+        </div>
+      </div>
+
+      <!-- NEW CORE FEATURE: RICH SNIPPETS -->
+      <div class="features__row features__row--normal" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">05</span>
+          <h3 class="features__heading">Google Star Ratings (Rich Snippets)</h3>
+          <p class="features__desc">Automatically injects Schema.org <code>AggregateRating</code> and <code>Review</code> JSON-LD structured data into your product pages. Your star ratings display directly in Google organic search results, driving higher click-through rates. Fully compatible with Yoast SEO and Rank Math.</p>
+        </div>
+        <div class="features__visual">
+          <div class="google-snippet">
+            <div class="google-snippet__url">
+              <span class="google-snippet__favicon">S</span>
+              <span class="google-snippet__domain">yourstore.com</span>
+              <span class="google-snippet__path">&rsaquo; product &rsaquo; premium-leather-bag</span>
+            </div>
+            <div class="google-snippet__title">Premium Leather Travel Bag — Authentic Handmade Quality</div>
+            <div class="google-snippet__rating-row">
+              <span class="google-snippet__stars">★★★★★</span>
+              <span>Rating: 4.9 &middot; 48 reviews &middot; $129.00 &middot; In stock</span>
+            </div>
+            <p class="google-snippet__desc">Handcrafted full-grain leather travel bag with waterproof lining. Browse real customer photo and video reviews...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW CORE FEATURE: VERIFIED BUYER & REPLIES -->
+      <div class="features__row features__row--reverse" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">06</span>
+          <h3 class="features__heading">Verified Badges, Avatars &amp; Store Replies</h3>
+          <p class="features__desc">Build buyer confidence with verified customer badges, interactive avatar cropping, helpful/unhelpful community voting, and public store owner reply threads with official store badges.</p>
+        </div>
+        <div class="features__visual">
+          <img src="assets/screenshot-4.jpg" alt="WooCommerce customer review with verified purchase badge and store reply thread" loading="lazy">
+        </div>
+      </div>
+
+      <!-- PRO FEATURES -->
+      <div class="features__group features__group--pro" data-aos="fade-up">
+        <div class="features__group-header">
+          <h3 class="features__group-title">Pro Features</h3>
+          <span class="features__group-badge features__group-badge--pro">PRO</span>
+        </div>
+        <p class="features__group-desc">Everything in Free, plus advanced tools to turn your reviews into a marketing and SEO channel.</p>
+      </div>
+
+      <div class="features__row features__row--normal" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">07</span>
+          <h3 class="features__heading">SEO Review Pages</h3>
+          <p class="features__desc">A dedicated, filterable all-reviews page for your store, with auto-generated SEO titles and descriptions per category.</p>
+        </div>
+        <div class="features__visual">
+          <div class="features__concept">
+            <div class="features__concept-browser">
+              <div class="features__concept-bar">
+                <span class="features__concept-dot"></span>
+                <span class="features__concept-dot"></span>
+                <span class="features__concept-dot"></span>
+                <span class="features__concept-url">yourstore.com/reviews/electronics</span>
+              </div>
+              <div class="features__concept-page">
+                <div class="features__concept-title">Electronics Reviews — Customer Feedback</div>
+                <div class="features__concept-meta">Meta: "Browse 247 customer reviews for Electronics at Your Store…"</div>
+                <div class="features__concept-filters">
+                  <span class="features__concept-filter features__concept-filter--active">All</span>
+                  <span class="features__concept-filter">5 Stars</span>
+                  <span class="features__concept-filter">4 Stars</span>
+                  <span class="features__concept-filter">With Photos</span>
+                </div>
+                <div class="features__concept-reviews">
+                  <div class="features__concept-review">
+                    <div class="features__concept-stars">★★★★★</div>
+                    <div class="features__concept-text">"Great product, exactly as described…"</div>
+                  </div>
+                  <div class="features__concept-review">
+                    <div class="features__concept-stars">★★★★☆</div>
+                    <div class="features__concept-text">"Good quality, fast shipping…"</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features__row features__row--reverse" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">08</span>
+          <h3 class="features__heading">Custom Criteria Ratings</h3>
+          <p class="features__desc">Let customers rate specific aspects of your product — quality, value, durability — with configurable rating criteria.</p>
+        </div>
+        <div class="features__visual">
+          <div class="features__concept">
+            <div class="features__concept-card">
+              <div class="features__concept-card-title">Rating Criteria</div>
+              <div class="features__concept-criteria">
+                <div class="features__concept-criterion">
+                  <span>Quality</span>
+                  <div class="features__concept-bar-track"><div class="features__concept-bar-fill" style="width:92%"></div></div>
+                  <span class="features__concept-score">4.6</span>
+                </div>
+                <div class="features__concept-criterion">
+                  <span>Value</span>
+                  <div class="features__concept-bar-track"><div class="features__concept-bar-fill" style="width:86%"></div></div>
+                  <span class="features__concept-score">4.3</span>
+                </div>
+                <div class="features__concept-criterion">
+                  <span>Durability</span>
+                  <div class="features__concept-bar-track"><div class="features__concept-bar-fill" style="width:96%"></div></div>
+                  <span class="features__concept-score">4.8</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features__row features__row--normal" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">09</span>
+          <h3 class="features__heading">Email Reminders</h3>
+          <p class="features__desc">Automatically send follow-up emails asking customers to leave a review after purchase — configurable timing and templates.</p>
+        </div>
+        <div class="features__visual">
+          <div class="features__concept">
+            <div class="features__concept-card">
+              <div class="features__concept-card-title">Email Reminder Settings</div>
+              <div class="features__concept-form">
+                <div class="features__concept-field">
+                  <span class="features__concept-field-label">Delay after purchase</span>
+                  <span class="features__concept-field-value">7 days</span>
+                </div>
+                <div class="features__concept-field">
+                  <span class="features__concept-field-label">Subject line</span>
+                  <span class="features__concept-field-value">How did you like your order?</span>
+                </div>
+                <div class="features__concept-field">
+                  <span class="features__concept-field-label">Include coupon</span>
+                  <span class="features__concept-toggle features__concept-toggle--on"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features__row features__row--reverse" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">10</span>
+          <h3 class="features__heading">Coupons for Reviews</h3>
+          <p class="features__desc">Reward customers who leave reviews with discount coupons — automatic generation, configurable discount type and amount.</p>
+        </div>
+        <div class="features__visual">
+          <div class="features__concept">
+            <div class="features__concept-card">
+              <div class="features__concept-card-title">Review Coupon Settings</div>
+              <div class="features__concept-form">
+                <div class="features__concept-field">
+                  <span class="features__concept-field-label">Discount type</span>
+                  <span class="features__concept-field-value">Percentage</span>
+                </div>
+                <div class="features__concept-field">
+                  <span class="features__concept-field-label">Amount</span>
+                  <span class="features__concept-field-value">10%</span>
+                </div>
+                <div class="features__concept-field">
+                  <span class="features__concept-field-label">Coupon validity</span>
+                  <span class="features__concept-field-value">30 days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features__row features__row--normal" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">11</span>
+          <h3 class="features__heading">Analytics Dashboard</h3>
+          <p class="features__desc">Track review submissions, average ratings, and media uploads over time with a built-in analytics dashboard.</p>
+        </div>
+        <div class="features__visual">
+          <div class="features__concept">
+            <div class="features__concept-card">
+              <div class="features__concept-card-title">Review Analytics</div>
+              <div class="features__concept-stats">
+                <div class="features__concept-stat">
+                  <span class="features__concept-stat-value">247</span>
+                  <span class="features__concept-stat-label">Total Reviews</span>
+                </div>
+                <div class="features__concept-stat">
+                  <span class="features__concept-stat-value">4.6</span>
+                  <span class="features__concept-stat-label">Avg Rating</span>
+                </div>
+                <div class="features__concept-stat">
+                  <span class="features__concept-stat-value">89</span>
+                  <span class="features__concept-stat-label">With Media</span>
+                </div>
+              </div>
+              <div class="features__concept-chart">
+                <div class="features__concept-chart-bar" style="height:40%"></div>
+                <div class="features__concept-chart-bar" style="height:65%"></div>
+                <div class="features__concept-chart-bar" style="height:55%"></div>
+                <div class="features__concept-chart-bar" style="height:80%"></div>
+                <div class="features__concept-chart-bar" style="height:70%"></div>
+                <div class="features__concept-chart-bar" style="height:90%"></div>
+                <div class="features__concept-chart-bar" style="height:85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features__row features__row--reverse" data-aos="fade-up" data-aos-duration="800">
+        <div class="features__text">
+          <span class="features__num">12</span>
+          <h3 class="features__heading">Carousel &amp; Grid Widgets</h3>
+          <p class="features__desc">Display reviews anywhere on your site — product pages, homepage, landing pages — as a carousel or grid widget.</p>
+        </div>
+        <div class="features__visual">
+          <div class="features__concept">
+            <div class="features__concept-card">
+              <div class="features__concept-card-title">Widget Layout Options</div>
+              <div class="features__concept-widgets">
+                <div class="features__concept-widget">
+                  <div class="features__concept-widget-label">Carousel</div>
+                  <div class="features__concept-widget-preview">
+                    <div class="features__concept-slide"></div>
+                    <div class="features__concept-slide features__concept-slide--active"></div>
+                    <div class="features__concept-slide"></div>
+                  </div>
+                </div>
+                <div class="features__concept-widget">
+                  <div class="features__concept-widget-label">Grid</div>
+                  <div class="features__concept-widget-preview features__concept-widget-preview--grid">
+                    <div class="features__concept-grid-item"></div>
+                    <div class="features__concept-grid-item"></div>
+                    <div class="features__concept-grid-item"></div>
+                    <div class="features__concept-grid-item"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="pricing__header" data-aos="fade-up">
+        <span class="ps__label">Simple pricing</span>
+        <h2 class="ps__title">Start free, upgrade when you need&nbsp;more</h2>
+        <p class="ps__subtitle">Start with the free plugin. Upgrade to Pro when you want advanced review tools, SEO-friendly review pages, and marketing features for your WooCommerce store.</p>
+      </div>
+
+      <div class="founding-offer" data-aos="fade-up" data-aos-delay="100">
+        <div class="founding-offer__badge" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l2.4 4.9 5.4.8-1.7 1.7 1.7 1.6-4.9.7-1.2 4.7-1.2-4.7-4.9-.7 1.7-1.6L6.1 7.9 8.5 7.9 12 3z" fill="currentColor" opacity="0.9"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" opacity="0.35"/></svg>
+        </div>
+        <div class="founding-offer__body">
+          <span class="founding-offer__tag">Founding Customer Offer</span>
+          <p class="founding-offer__text"><strong>Only the first 100 licenses</strong> are locked in for a lifetime — one payment, all future updates included. Once they are gone, PVR Pro moves to an annual subscription.</p>
+        </div>
+        <div class="founding-offer__count">
+          <span class="founding-offer__count-num">100</span>
+          <span class="founding-offer__count-label">lifetime licenses available at this price</span>
+        </div>
+      </div>
+
+      <div class="pricing__grid">
+
+        <!-- FREE -->
+        <div class="pricing__card" data-aos="fade-right" data-aos-duration="700">
+          <div class="pricing__card-head">
+            <h3 class="pricing__plan">Free</h3>
+            <p class="pricing__price">Free forever</p>
+          </div>
+          <ul class="pricing__features">
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Photo &amp; Video Uploads</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Client-Side Video Compression</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Video Thumbnails</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Helpful Voting</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Store Replies</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Reviewer Avatars</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Schema Markup</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Email Notifications</li>
+          </ul>
+          <a href="#" class="btn btn--secondary pricing__btn">Download Free</a>
+        </div>
+
+        <!-- PRO -->
+        <div class="pricing__card pricing__card--pro" data-aos="fade-left" data-aos-duration="700" data-aos-delay="150">
+          <span class="pricing__badge">Most Popular</span>
+          <div class="pricing__card-head">
+            <h3 class="pricing__plan">Pro</h3>
+            <p class="pricing__price">$39 <span class="pricing__price-note">One-time purchase &middot; Single site license</span></p>
+            <p class="pricing__value">Unlock advanced review tools, SEO review pages, analytics, and marketing features.</p>
+          </div>
+          <div class="pricing__info">
+            <div class="pricing__info-block">
+              <span class="pricing__info-heading">Includes:</span>
+              <span class="pricing__info-item"><span class="pricing__info-check">&#10003;</span> Lifetime license — pay once, own it forever</span>
+              <span class="pricing__info-item"><span class="pricing__info-check">&#10003;</span> All future updates &amp; support included</span>
+            </div>
+            <div class="pricing__info-block">
+              <span class="pricing__info-heading">Founding offer:</span>
+              <span class="pricing__info-item">First 100 licenses lock this price for life</span>
+            </div>
+          </div>
+          <ul class="pricing__features">
+            <li class="pricing__feature pricing__feature--pro"><span class="pricing__check">&#10003;</span> Everything in Free</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Custom Criteria Ratings</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Email Reminders</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Coupons for Reviews</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Analytics Dashboard</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> Carousel &amp; Grid Layouts</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> All Reviews Page with category, rating &amp; helpfulness filters</li>
+            <li class="pricing__feature"><span class="pricing__check">&#10003;</span> SEO-friendly auto-generated titles &amp; descriptions for review pages</li>
+          </ul>
+          <a href="#" class="btn btn--primary pricing__btn">Get PVR Pro — $39</a>
+        </div>
+
+      </div>
+      <div class="pricing__reassurance" data-aos="fade-up" data-aos-delay="100">
+        <span class="pricing__reassurance-item">No monthly payment required</span>
+        <span class="pricing__reassurance-divider" aria-hidden="true">&middot;</span>
+        <span class="pricing__reassurance-item">Upgrade from Free anytime</span>
+        <span class="pricing__reassurance-divider" aria-hidden="true">&middot;</span>
+        <span class="pricing__reassurance-item">Your reviews stay safe when upgrading</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEMO GALLERY ===== -->
+  <section id="demo" class="demo">
+    <div class="container">
+      <div class="demo__header" data-aos="fade-up">
+        <span class="ps__label">See it in action</span>
+        <h2 class="ps__title">Every feature, up close</h2>
+        <p class="ps__subtitle">From review submission to media playback — explore the full PVR experience.</p>
+      </div>
+      <div class="demo__grid">
+        <button class="demo__item" data-aos="fade-up" data-aos-duration="600" data-caption="Simple upload form — customers submit photo and video reviews with a clean, intuitive interface">
+          <img src="assets/screenshot-1.jpg" alt="WooCommerce photo and video review form with media upload zone" loading="lazy">
+          <span class="demo__caption">Simple upload form</span>
+        </button>
+        <button class="demo__item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="60" data-caption="Avatar &amp; rating fields — customers personalize every review with a profile photo and star rating">
+          <img src="assets/screenshot-2.jpg" alt="WooCommerce review form with avatar upload and star rating fields" loading="lazy">
+          <span class="demo__caption">Avatar &amp; rating fields</span>
+        </button>
+        <button class="demo__item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="80" data-caption="Photo review gallery — customers browse real buyer photos before making a purchase">
+          <img src="assets/screenshot-4.jpg" alt="WooCommerce product page showing photo review gallery with helpful vote buttons" loading="lazy">
+          <span class="demo__caption">Photo review gallery</span>
+        </button>
+        <button class="demo__item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="160" data-caption="Inline video player — reviews with video open in a lightweight modal without page reload">
+          <img src="assets/screenshot-5.jpg" alt="WooCommerce video review modal with embedded video player" loading="lazy">
+          <span class="demo__caption">Inline video player</span>
+        </button>
+        <button class="demo__item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="240" data-caption="Card-based settings — configure every aspect of the plugin from a clean, intuitive dashboard">
+          <img src="assets/screenshot-6.jpg" alt="PVR plugin settings page with card-based WooCommerce admin UI" loading="lazy">
+          <span class="demo__caption">Card-based settings</span>
+        </button>
+        <button class="demo__item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="320" data-caption="Full media gallery — one modal to browse all photos and videos submitted for a product">
+          <img src="assets/screenshot-7.jpg" alt="Full media gallery modal showing all product photos and videos" loading="lazy">
+          <span class="demo__caption">Full media gallery</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox__prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+    <button class="lightbox__next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+    <div class="lightbox__counter" id="lightboxCounter"></div>
+    <div class="lightbox__content">
+      <img src="" alt="" class="lightbox__img" id="lightboxImg">
+      <p class="lightbox__caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- ===== SOCIAL PROOF ===== -->
+  <section id="social-proof" class="social-proof">
+    <div class="container">
+      <div class="ps__header" data-aos="fade-up">
+        <h2 class="ps__title">8+ Years of Real-World Review Plugin Development</h2>
+        <p class="ps__subtitle">PVR Media Reviews is built by the developer behind Extended Reviews for OpenCart, a commercial photo and video review system launched in 2018 and actively maintained ever since.</p>
+        <p class="ps__subtitle ps__subtitle--extra">After years of developing and supporting a dedicated review system for online stores, PVR brings that experience to WooCommerce, with many features shaped by real-world store-owner needs and feedback.</p>
+      </div>
+
+      <div class="social-proof__stats" data-aos="fade-up" data-aos-delay="100">
+        <div class="social-proof__stat">
+          <span class="social-proof__stat-num">8+</span>
+          <span class="social-proof__stat-label">Years of development</span>
+          <span class="social-proof__stat-desc">Extended Reviews has been continuously developed since 2018.</span>
+        </div>
+        <div class="social-proof__stat">
+          <span class="social-proof__stat-num">1,000+</span>
+          <span class="social-proof__stat-label">Stores served</span>
+          <span class="social-proof__stat-desc">Estimated across multiple sales channels and known deployments.</span>
+        </div>
+        <div class="social-proof__stat">
+          <span class="social-proof__stat-num">5/5</span>
+          <span class="social-proof__stat-label">Customer rating</span>
+          <span class="social-proof__stat-desc">Based on 58 public reviews on one established marketplace.</span>
+        </div>
+      </div>
+
+      <div class="social-proof__marketplace" data-aos="fade-up" data-aos-delay="150">
+        <span class="social-proof__marketplace-label">Verified marketplace history</span>
+        <span class="social-proof__marketplace-stats">249 purchases · 58 reviews · 5/5 rating</span>
+        <a href="https://liveopencart.ru/opencart-moduli-shablony/moduli/sotsialnyie-seti/otzyivyi-o-tovarah-s-foto-i-video-laykami-i-kommentariyami-sistema-voznagrajdeniy-za-otzyivyi?preview=1" target="_blank" rel="noopener noreferrer" class="social-proof__marketplace-link">View marketplace reviews ↗</a>
+      </div>
+
+      <div class="social-proof__grid">
+        <div class="social-proof__card" data-aos="fade-up" data-aos-delay="0">
+          <div class="social-proof__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="social-proof__heading">Proven in Production</h3>
+          <p class="social-proof__desc">Extended Reviews has been used by online stores for years, with ongoing development driven by real store-owner requirements.</p>
+        </div>
+        <div class="social-proof__card" data-aos="fade-up" data-aos-delay="100">
+          <div class="social-proof__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
+          </div>
+          <h3 class="social-proof__heading">Actively Maintained</h3>
+          <p class="social-proof__desc">Extended Reviews launched in 2018 and is still actively developed, with version 5.6 released in 2026. PVR Media Reviews brings that long-term development experience to WooCommerce.</p>
+        </div>
+        <div class="social-proof__card" data-aos="fade-up" data-aos-delay="200">
+          <div class="social-proof__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="social-proof__heading">Try It Yourself</h3>
+          <p class="social-proof__desc">Don't take our word for it. Explore PVR on the live demo store and see how the review experience works before installing it.</p>
+          <a href="https://demo.pv-reviews.site" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm social-proof__cta">View Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="ps__header" data-aos="fade-up">
+        <h2 class="ps__title">Frequently Asked Questions</h2>
+        <p class="ps__subtitle">Everything you need to know before installing PVR.</p>
+      </div>
+      <div class="faq__list" data-aos="fade-up" data-aos-delay="100">
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Can customers upload photos to WooCommerce reviews?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Yes. PVR Media Reviews adds a photo and video upload field directly to the WooCommerce review form, so customers can attach real photos and videos of the product to their review with no extra setup required.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Does this plugin slow down my site?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>No. All video compression happens in the visitor's browser before upload, so your server never processes raw video files. There is no FFmpeg dependency and no extra CPU load, so you don't need to upgrade hosting to support video reviews.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Can this plugin help my store get more organic search traffic?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Yes, with the Pro version. The All Reviews page lets shoppers filter reviews by category, rating, and helpfulness, and each filtered view gets its own auto-generated SEO title and meta description based on a template you configure. This turns every product category into its own indexable landing page built entirely from your customers' reviews.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Does this plugin replace WooCommerce reviews?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>No. The plugin extends native WooCommerce reviews stored as WordPress comments. All reviews remain fully compatible with WooCommerce and can be migrated at any time.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>How does video compression work?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Videos are compressed entirely in the browser using the MediaRecorder API and Canvas. No server-side processing is required. The compressed video is then uploaded to your WordPress media library.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>What video formats are supported?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>The plugin supports MP4 and WebM formats. Compression output depends on browser support — Chrome/Edge produce WebM, Safari produces MP4.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Is there a Pro version?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Yes. The Pro version adds custom criteria ratings, email reminders, review coupons, analytics, carousel/grid layouts, and an SEO-friendly All Reviews page for the whole store.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>What are the requirements to install PVR?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>WordPress 6.0 or later, WooCommerce 7.0 or later, and PHP 7.1 or higher.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Can I start with the free version and upgrade later?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Yes. You can start with the free version and upgrade to PVR Pro whenever you need additional features. Your existing reviews and settings remain available.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>What does the $39 Pro license include?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>The $39 license is a one-time payment for use on a single WooCommerce site. You get a lifetime Pro license with every Pro feature — SEO Review Pages, custom criteria ratings, email reminders, review coupons, analytics dashboard, and carousel/grid layouts — plus updates and support. No renewals, no hidden fees.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Is the $39 payment recurring?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>No. It is a one-time payment. As a founding customer you keep your license — with updates and support — forever.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Is PVR Pro a subscription?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Not for founding customers. The first 100 Pro licenses are lifetime: one payment, with updates and support included forever. After those are sold, PVR Pro will move to an annual subscription for new customers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>What happens after the first 100 licenses are sold?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>Nothing changes if you already own a license — it stays lifetime forever. New customers will join through an annual subscription. Buying now locks in lifetime access for your site.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>How many sites can I use Pro on?</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path class="faq__icon-v" d="M10 5v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>One Pro license is for one website.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="faq__cta" data-aos="fade-up" data-aos-delay="200">
+        <p class="faq__cta-text">Still have questions?</p>
+        <a href="#pricing" class="btn btn--primary">Get PVR Pro — $39</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div id="pv-footer"></div>
+
+  <!-- ===== CHECKOUT MODAL ===== -->
+  <div class="checkout-modal" id="checkoutModal" aria-hidden="true" role="dialog" aria-labelledby="checkoutModalTitle">
+    <div class="checkout-modal__backdrop" id="checkoutBackdrop"></div>
+    <div class="checkout-modal__content">
+      <button class="checkout-modal__close" id="checkoutClose" aria-label="Close">&times;</button>
+      <div class="checkout-modal__header">
+        <div class="checkout-modal__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h2 class="checkout-modal__title" id="checkoutModalTitle">Enter your website URL</h2>
+        <p class="checkout-modal__subtitle">PVR Pro is a single-site license. Enter the website where you'll install the plugin.</p>
+      </div>
+      <form class="checkout-modal__form" id="checkoutForm" novalidate>
+        <div class="checkout-modal__field">
+          <label class="checkout-modal__label" for="websiteUrl">Website URL</label>
+          <input
+            type="url"
+            id="websiteUrl"
+            class="checkout-modal__input"
+            placeholder="https://example.com"
+            autocomplete="url"
+            required
+          >
+          <span class="checkout-modal__hint">Enter the full URL including https://</span>
+          <span class="checkout-modal__error" id="urlError"></span>
+        </div>
+        <div class="checkout-modal__field">
+          <label class="checkout-modal__label" for="customerEmail">Email</label>
+          <input
+            type="email"
+            id="customerEmail"
+            class="checkout-modal__input"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+          <span class="checkout-modal__hint">Your license key will be sent to this email</span>
+          <span class="checkout-modal__error" id="emailError"></span>
+        </div>
+        <button type="submit" class="btn btn--primary checkout-modal__submit" id="checkoutSubmit">
+          <span class="checkout-modal__submit-text">Continue to Checkout — $39</span>
+          <span class="checkout-modal__submit-loading" style="display:none;">
+            <svg class="checkout-modal__spinner" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>
+            Processing...
+          </span>
+        </button>
+      </form>
+      <p class="checkout-modal__security">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Secure checkout powered by Lemon Squeezy
+      </p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

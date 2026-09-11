@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Plugin Settings — PVR Media Reviews</title>
+  <meta name="description" content="Complete reference of every configuration option in the PVR Media Reviews WooCommerce plugin admin panel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .settings-page { padding: 100px 0 80px; }
+    .settings-page__hero { text-align: center; margin-bottom: 64px; }
+    .settings-page__title { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; color: var(--text-primary); margin-bottom: 16px; }
+    .settings-page__subtitle { font-size: 18px; color: var(--text-secondary); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+    .sp-section { margin-bottom: 48px; }
+    .sp-section__title { font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .sp-settings { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .sp-settings__row { display: flex; align-items: flex-start; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--border-subtle); }
+    .sp-settings__row:last-child { border-bottom: none; }
+    .sp-settings__name { font-size: 14px; font-weight: 600; color: var(--text-primary); min-width: 220px; flex-shrink: 0; }
+    .sp-settings__desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .sp-settings__badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+    .sp-settings__badge--free { color: #10b981; background: #ecfdf5; }
+    .sp-settings__badge--pro { color: #6366f1; background: #eef2ff; }
+    .sp-divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+    .sp-cta { text-align: center; padding: 48px 0; }
+    .sp-cta__title { font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+    .sp-cta__text { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+    @media (max-width: 640px) {
+      .settings-page__title { font-size: 28px; }
+      .sp-settings__row { flex-direction: column; gap: 4px; }
+      .sp-settings__name { min-width: auto; }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SVBX2VGG58"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SVBX2VGG58');
+</script>
+
+</head>
+<body>
+
+  <div id="pv-header"></div>
+  <script src="components/include.js"></script>
+
+  <main class="settings-page">
+    <div class="container">
+
+      <div class="settings-page__hero">
+        <h1 class="settings-page__title">All Plugin Settings</h1>
+        <p class="settings-page__subtitle">Complete reference of every configuration option in the PVR Media Reviews admin panel, organized by settings tab.</p>
+      </div>
+
+      <!-- ===== GENERAL SETTINGS ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">General Settings</h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Auto-approve Reviews</span>
+            <span class="sp-settings__desc">Select which reviews should be published automatically without moderation. Options: Disabled (manual moderation for all), From customers (auto-approve reviews from buyers of the product), From registered users (auto-approve from logged-in users), From all users (auto-approve everything).</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">One Review per Product</span>
+            <span class="sp-settings__desc">Limit each user to one review per product. When enabled, a customer who already left a review cannot submit another one for the same product. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Who Can Review</span>
+            <span class="sp-settings__desc">Control who is allowed to leave reviews. Options: All visitors (anyone, including guests), Registered users (only logged-in users), Only customers (only users who purchased the product).</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Who Can Reply</span>
+            <span class="sp-settings__desc">Control who can reply to reviews. Same options as above: All visitors, Registered users, or Only customers.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Who Can Vote</span>
+            <span class="sp-settings__desc">Control who can mark reviews as "helpful". Options: All visitors, Registered users, or Only customers.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Default Reply Status</span>
+            <span class="sp-settings__desc">Default moderation status for store replies. Options: Enabled (auto-approved, shown immediately) or Disabled (held for moderation before publishing).</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Pros &amp; Cons</span>
+            <span class="sp-settings__desc">Enable separate "Pros" and "Cons" fields in the review form, allowing customers to list specific advantages and disadvantages of the product. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Phone Field</span>
+            <span class="sp-settings__desc">Show an optional phone number field in the review form. Default: disabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">City Field</span>
+            <span class="sp-settings__desc">Show an optional city field in the review form, letting reviewers share their location. Default: disabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Privacy Policy URL</span>
+            <span class="sp-settings__desc">URL to your privacy policy page. When set, a consent checkbox linking to this URL is shown in the review form.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== LIMITS & ANTI-SPAM ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Limits &amp; Anti-spam</h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Review Min Length</span>
+            <span class="sp-settings__desc">Minimum number of characters required for a review. Prevents empty or very short reviews. Default: 10.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Review Max Length</span>
+            <span class="sp-settings__desc">Maximum number of characters allowed in a review. Default: 5000.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Name Min Length</span>
+            <span class="sp-settings__desc">Minimum number of characters for the reviewer's name. Default: 3.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Name Max Length</span>
+            <span class="sp-settings__desc">Maximum number of characters for the reviewer's name. Default: 64.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Reply Min Length</span>
+            <span class="sp-settings__desc">Minimum number of characters required for a reply to a review. Default: 10.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Reply Max Length</span>
+            <span class="sp-settings__desc">Maximum number of characters allowed in a reply. Default: 2000.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Pros/Cons Max Length</span>
+            <span class="sp-settings__desc">Maximum number of characters for each Pros and Cons field. Default: 500.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SECURITY ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Security</h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Reviews / Day (per IP)</span>
+            <span class="sp-settings__desc">Maximum number of reviews a single IP address can submit per day. Prevents spam from repeat visitors. Default: 10.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Users / Day (per user)</span>
+            <span class="sp-settings__desc">Maximum number of reviews a single registered user can submit per day. Default: 20.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Media Files / Day</span>
+            <span class="sp-settings__desc">Maximum number of media files (photos + videos) a single IP can upload per day. Default: 12.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Media Weight (MB) / Day</span>
+            <span class="sp-settings__desc">Total weight limit (in MB) of all media files a single IP can upload per day. Prevents storage abuse. Default: 1500 MB.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Hidden Field Protection (Honeypot)</span>
+            <span class="sp-settings__desc">Enable a hidden form field that bots automatically fill in, allowing the system to detect and reject automated spam submissions. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Enable reCAPTCHA v3</span>
+            <span class="sp-settings__desc">Add Google reCAPTCHA v3 verification to the review form for advanced bot protection. Default: disabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">reCAPTCHA Site Key</span>
+            <span class="sp-settings__desc">Your Google reCAPTCHA v3 site key. Required when reCAPTCHA is enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">reCAPTCHA Secret Key</span>
+            <span class="sp-settings__desc">Your Google reCAPTCHA v3 secret key. Required when reCAPTCHA is enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">reCAPTCHA Threshold</span>
+            <span class="sp-settings__desc">Minimum score (0.0–1.0) required to pass reCAPTCHA verification. Lower values are more lenient. Default: 0.5.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Allowed Photo MIME Types</span>
+            <span class="sp-settings__desc">Comma-separated list of allowed photo file extensions. Default: jpg, jpeg, png, webp.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Allowed Video MIME Types</span>
+            <span class="sp-settings__desc">Comma-separated list of allowed video file extensions. Default: mp4, webm, mov.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MEDIA — IMAGE SETTINGS ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Media — Image Settings</h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Target Resolution</span>
+            <span class="sp-settings__desc">Maximum image resolution after server-side processing. Images larger than this are resized. Options: HD (1280×720), Full HD (1920×1080), QHD (2560×1440), 4K UHD (3840×2160). Default: Full HD.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Global Quality</span>
+            <span class="sp-settings__desc">JPEG/WebP compression quality (40–100). Higher values preserve more detail but increase file size. Default: 85.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Max Photos per Review</span>
+            <span class="sp-settings__desc">Maximum number of photos a customer can attach to a single review. Default: 5.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Photo Size Min (MB)</span>
+            <span class="sp-settings__desc">Minimum file size for photo uploads. Files smaller than this are rejected. Default: 0.1 MB.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Photo Size Max (MB)</span>
+            <span class="sp-settings__desc">Maximum file size for photo uploads. Files larger than this are rejected. Default: 8 MB.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Watermark Image</span>
+            <span class="sp-settings__desc">Upload a watermark image to automatically overlay on all user-submitted photos. Leave empty to disable.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Watermark Position</span>
+            <span class="sp-settings__desc">Position of the watermark overlay on photos. Options: Disabled, Top-left, Top-right, Bottom-left, Bottom-right, Center.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Watermark Width (%)</span>
+            <span class="sp-settings__desc">Watermark width as a percentage of the image width. Default: 20%.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Max Avatar Size (MB)</span>
+            <span class="sp-settings__desc">Maximum file size for avatar uploads. Default: 5 MB.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Avatar Target Size (px)</span>
+            <span class="sp-settings__desc">Avatars larger than this (in pixels) are automatically resized on upload. Default: 500 px.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MEDIA — VIDEO SETTINGS ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Media — Video Settings</h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Target Resolution</span>
+            <span class="sp-settings__desc">Maximum video resolution after client-side compression. Options: HD (1280×720), Full HD (1920×1080), QHD (2560×1440), 4K UHD (3840×2160). Default: HD.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Target Bitrate</span>
+            <span class="sp-settings__desc">Target video bitrate for compression. Higher bitrates produce better quality but larger files. Options: 2500 kbps (HD), 5000 kbps (Full HD), 8000 kbps (QHD), 16000 kbps (4K UHD). Default: 5000 kbps.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Max FPS</span>
+            <span class="sp-settings__desc">Maximum frames per second for compressed videos. Videos with higher FPS are downsampled. Default: 30.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Compress Above (MB)</span>
+            <span class="sp-settings__desc">Videos larger than this size (in MB) are automatically compressed in the browser before upload using modern MediaRecorder API + Canvas. Zero server CPU load. Default: 50 MB.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Max Videos per Review</span>
+            <span class="sp-settings__desc">Maximum number of videos a customer can attach to a single review. Default: 3.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Video Size Min (MB)</span>
+            <span class="sp-settings__desc">Minimum file size for video uploads. Default: 0.1 MB.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Video Size Max (MB)</span>
+            <span class="sp-settings__desc">Maximum file size for video uploads before compression. Default: 500 MB (fully configurable).</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Video Duration Min (sec)</span>
+            <span class="sp-settings__desc">Minimum video duration in seconds. Shorter videos are rejected. Default: 3 sec.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Video Duration Max (sec)</span>
+            <span class="sp-settings__desc">Maximum video duration in seconds. Longer videos are rejected. Default: 120 sec.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MEDIA — THUMBNAIL SETTINGS ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Media — Thumbnail Settings</h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Grid Thumbnail Width</span>
+            <span class="sp-settings__desc">Width in pixels of thumbnails shown in the gallery grid on the product page. Default: 100 px.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Grid Thumbnail Height</span>
+            <span class="sp-settings__desc">Height in pixels of thumbnails in the gallery grid. Default: 100 px.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Modal Preview Width</span>
+            <span class="sp-settings__desc">Width in pixels of the image preview shown in the detail modal. Default: 400 px.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Modal Preview Height</span>
+            <span class="sp-settings__desc">Height in pixels of the image preview in the detail modal. Default: 400 px.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Lightbox Image Max Width</span>
+            <span class="sp-settings__desc">Maximum width in pixels of images displayed in the full-screen lightbox. Default: 1920 px.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Lightbox Image Max Height</span>
+            <span class="sp-settings__desc">Maximum height in pixels of images in the lightbox. Default: 1080 px.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Grid Thumbnail Quality</span>
+            <span class="sp-settings__desc">Compression quality (40–100) for grid thumbnails. Default: 100.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Modal Preview Quality</span>
+            <span class="sp-settings__desc">Compression quality (40–100) for modal preview images. Default: 100.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Lightbox Quality</span>
+            <span class="sp-settings__desc">Compression quality (40–100) for full-screen lightbox images. Default: 90.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== EMAILS & NOTIFICATIONS ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Emails &amp; Notifications</h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Store Logo</span>
+            <span class="sp-settings__desc">Logo displayed in email headers. Leave empty to use your site's custom logo.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Store Name</span>
+            <span class="sp-settings__desc">Store name shown in email headers and footers. Leave empty to use your WordPress site name.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Store Phone</span>
+            <span class="sp-settings__desc">Phone number displayed in emails. Leave empty to use the WooCommerce store phone.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Contact Email</span>
+            <span class="sp-settings__desc">Contact email address shown in the email footer.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Admin Email</span>
+            <span class="sp-settings__desc">Email address that receives new review notifications. Default: WordPress admin email.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">From Name</span>
+            <span class="sp-settings__desc">Sender name in email headers. Default: your WordPress site name.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">From Address</span>
+            <span class="sp-settings__desc">Sender email address in email headers. Default: admin email.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Confirmation Email Subject</span>
+            <span class="sp-settings__desc">Subject line for the confirmation email sent to customers after review submission.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Notify Admin on New Review</span>
+            <span class="sp-settings__desc">Send an email notification to the admin when a new review is submitted. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Confirmation to Customer</span>
+            <span class="sp-settings__desc">Send a confirmation email to the customer after their review is submitted. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--free">Free</span>
+            <span class="sp-settings__name">Notify Customer on Reply</span>
+            <span class="sp-settings__desc">Send an email to the customer when the store replies to their review. Default: enabled.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRO: COUPON REWARDS ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Coupon Rewards <span class="sp-settings__badge sp-settings__badge--pro">PRO</span></h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Enable Coupon Rewards</span>
+            <span class="sp-settings__desc">Automatically issue a unique WooCommerce coupon code to customers after their review is approved/published.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Discount Type</span>
+            <span class="sp-settings__desc">Type of discount for generated coupons. Options: Percentage discount, Fixed cart discount.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Reward Amount — Text Review</span>
+            <span class="sp-settings__desc">Discount amount given for a text-only review (no media). Default: 5.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Reward Amount — Photo Review</span>
+            <span class="sp-settings__desc">Discount amount given when the review includes photos. Default: 10.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Reward Amount — Video Review</span>
+            <span class="sp-settings__desc">Discount amount given when the review includes videos. Default: 15.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Coupon Validity (days)</span>
+            <span class="sp-settings__desc">Number of days the generated coupon remains valid after issuance. Default: 30.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Minimum Order Amount</span>
+            <span class="sp-settings__desc">Minimum cart total required to use the coupon. Default: 0 (no minimum).</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Exclude Sale Items</span>
+            <span class="sp-settings__desc">Prevent the coupon from being applied to products already on sale.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Products (IDs)</span>
+            <span class="sp-settings__desc">Comma-separated list of product IDs the coupon can be used on. Leave empty for all products.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Exclude Products (IDs)</span>
+            <span class="sp-settings__desc">Comma-separated list of product IDs the coupon cannot be used on.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Categories (IDs)</span>
+            <span class="sp-settings__desc">Comma-separated list of category IDs the coupon can be used on.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Exclude Categories (IDs)</span>
+            <span class="sp-settings__desc">Comma-separated list of category IDs the coupon cannot be used on.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Email Subject</span>
+            <span class="sp-settings__desc">Subject line for the coupon reward email. Supports placeholders: {customer_name}, {coupon_code}, {coupon_amount}, {expiry_days}, {site_name}, {shop_url}.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Email Message</span>
+            <span class="sp-settings__desc">Body text of the coupon reward email. Supports the same placeholders as the subject line.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Show Notice on Review Form</span>
+            <span class="sp-settings__desc">Display a notice on the review form informing customers about the coupon reward. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Notice Text</span>
+            <span class="sp-settings__desc">Custom text for the coupon notice on the review form. Supports placeholders: {text_amount}, {photo_amount}, {video_amount}, {max_amount}.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Minimum Characters for Text Reviews</span>
+            <span class="sp-settings__desc">Minimum character count for text-only reviews to qualify for a coupon reward. Prevents very short reviews from getting rewards. Default: 50.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRO: EMAIL REMINDERS ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Email Reminders <span class="sp-settings__badge sp-settings__badge--pro">PRO</span></h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Enabled</span>
+            <span class="sp-settings__desc">Send automatic review request emails to customers after their order is completed.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Delay (Days)</span>
+            <span class="sp-settings__desc">Number of days to wait after order status changes to "Completed" before sending the first reminder. Range: 1–90. Default: 7.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Repeat Reminder</span>
+            <span class="sp-settings__desc">Send a second reminder email if the customer still hasn't left a review after the first one.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Repeat Delay (Days)</span>
+            <span class="sp-settings__desc">Days after order completion to send the second reminder. Range: 2–180. Default: 14.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Exclude Categories</span>
+            <span class="sp-settings__desc">Comma-separated list of product category IDs to exclude from reminders.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">First Reminder — Subject</span>
+            <span class="sp-settings__desc">Subject line for the first reminder email. Supports placeholders: {site_name}, {customer_name}, {order_number}.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">First Reminder — Heading</span>
+            <span class="sp-settings__desc">Email heading displayed at the top of the first reminder.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">First Reminder — Message</span>
+            <span class="sp-settings__desc">Body text of the first reminder email. Supports the same placeholders as the subject line.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Second Reminder — Subject</span>
+            <span class="sp-settings__desc">Subject line for the second reminder email. Same placeholder support.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Second Reminder — Heading</span>
+            <span class="sp-settings__desc">Email heading for the second reminder.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Second Reminder — Message</span>
+            <span class="sp-settings__desc">Body text of the second reminder email.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRO: WIDGETS — CAROUSEL ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Widgets — Carousel <span class="sp-settings__badge sp-settings__badge--pro">PRO</span></h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Review Count</span>
+            <span class="sp-settings__desc">Number of reviews to display in the carousel. Range: 1–50. Default: 10.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Product</span>
+            <span class="sp-settings__desc">Filter reviews by product ID. Set to 0 to show reviews from all products. Default: 0 (all).</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Category</span>
+            <span class="sp-settings__desc">Filter reviews by category ID. Set to 0 to show all categories. Default: 0 (all).</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Show Only Reviews with Media</span>
+            <span class="sp-settings__desc">Only display reviews that contain photos or videos. Default: disabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Order By</span>
+            <span class="sp-settings__desc">Sort order for carousel reviews. Options: Date, Rating, Helpful votes. Default: Date.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Autoplay</span>
+            <span class="sp-settings__desc">Automatically cycle through slides. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Slide Delay (ms)</span>
+            <span class="sp-settings__desc">Time in milliseconds between autoplay slides. Range: 1000–15000. Default: 5000.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Pagination Type</span>
+            <span class="sp-settings__desc">Navigation indicator style. Options: Scrollbar, Dots. Default: Scrollbar.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Inertia Power</span>
+            <span class="sp-settings__desc">How far the carousel slides on a swipe/flick gesture. Range: 0–10, step 0.5. Default: 3.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Max Inertia Slides</span>
+            <span class="sp-settings__desc">Maximum number of slides per inertial flick. Range: 1–30. Default: 10.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Avatar Size (px)</span>
+            <span class="sp-settings__desc">Size of reviewer avatars in the carousel. Range: 20–200. Default: 70.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Product Image Size (px)</span>
+            <span class="sp-settings__desc">Size of the product thumbnail in carousel cards. Range: 20–500. Default: 48.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Media Thumbnail Size (px)</span>
+            <span class="sp-settings__desc">Size of photo/video thumbnails in carousel cards. Range: 40–400. Default: 120.</span>
+          </div>
+        </div>
+        <h3 style="font-size:14px; font-weight:600; margin:16px 0 12px; color:var(--text-secondary);">Responsive Breakpoints</h3>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Desktop (≥1200px) — Slides</span>
+            <span class="sp-settings__desc">Number of visible slides on desktop. Default: 4.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Desktop — Navigation Arrows</span>
+            <span class="sp-settings__desc">Show prev/next arrows on desktop. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Desktop — Pagination</span>
+            <span class="sp-settings__desc">Show pagination on desktop. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Tablet Large (992–1199px) — Slides</span>
+            <span class="sp-settings__desc">Number of visible slides on large tablets. Default: 3.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Tablet Large — Navigation / Pagination</span>
+            <span class="sp-settings__desc">Toggle navigation arrows and pagination for large tablets. Defaults: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Tablet (768–991px) — Slides</span>
+            <span class="sp-settings__desc">Number of visible slides on tablets. Default: 2.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Tablet — Navigation / Pagination</span>
+            <span class="sp-settings__desc">Toggle navigation arrows and pagination for tablets. Defaults: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Mobile Landscape (480–767px) — Slides</span>
+            <span class="sp-settings__desc">Number of visible slides in mobile landscape. Default: 2.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Mobile Landscape — Navigation / Pagination</span>
+            <span class="sp-settings__desc">Toggle navigation arrows and pagination for mobile landscape. Defaults: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Mobile (&lt;480px) — Slides</span>
+            <span class="sp-settings__desc">Number of visible slides on small mobile screens. Default: 1.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Mobile — Navigation / Pagination</span>
+            <span class="sp-settings__desc">Toggle navigation arrows and pagination for mobile. Defaults: enabled.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRO: WIDGETS — GRID ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Widgets — Grid <span class="sp-settings__badge sp-settings__badge--pro">PRO</span></h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Review Count</span>
+            <span class="sp-settings__desc">Number of reviews to display in the grid. Range: 1–50. Default: 6.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Product</span>
+            <span class="sp-settings__desc">Filter reviews by product ID. Set to 0 for all products. Default: 0.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Category</span>
+            <span class="sp-settings__desc">Filter reviews by category ID. Set to 0 for all categories. Default: 0.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Show Only Reviews with Media</span>
+            <span class="sp-settings__desc">Only display reviews that contain photos or videos. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Order By</span>
+            <span class="sp-settings__desc">Sort order for grid reviews. Options: Date, Rating, Helpful votes. Default: Date.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Avatar Size (px)</span>
+            <span class="sp-settings__desc">Size of reviewer avatars in grid cards. Range: 20–200. Default: 70.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Product Image Size (px)</span>
+            <span class="sp-settings__desc">Size of product thumbnail in grid cards. Range: 20–500. Default: 48.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Media Thumbnail Size (px)</span>
+            <span class="sp-settings__desc">Size of photo/video thumbnails in grid cards. Range: 40–400. Default: 120.</span>
+          </div>
+        </div>
+        <h3 style="font-size:14px; font-weight:600; margin:16px 0 12px; color:var(--text-secondary);">Responsive Columns</h3>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Desktop (≥1200px) — Columns</span>
+            <span class="sp-settings__desc">Number of grid columns on desktop. Default: 3.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Tablet Large (992–1199px) — Columns</span>
+            <span class="sp-settings__desc">Number of grid columns on large tablets. Default: 3.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Tablet (768–991px) — Columns</span>
+            <span class="sp-settings__desc">Number of grid columns on tablets. Default: 2.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Mobile Landscape (480–767px) — Columns</span>
+            <span class="sp-settings__desc">Number of grid columns in mobile landscape. Default: 2.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Mobile (&lt;480px) — Columns</span>
+            <span class="sp-settings__desc">Number of grid columns on small mobile screens. Default: 1.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRO: REVIEWS PAGE ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Reviews Page <span class="sp-settings__badge sp-settings__badge--pro">PRO</span></h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Page Title (HTML title)</span>
+            <span class="sp-settings__desc">The HTML &lt;title&gt; tag for the all-reviews page. Used by search engines. Default: "Customer Reviews".</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">H1 Heading</span>
+            <span class="sp-settings__desc">The main H1 heading displayed at the top of the reviews page. Default: "All Customer Reviews".</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Description</span>
+            <span class="sp-settings__desc">Introductory text shown below the heading on the reviews page.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Reviews per Page</span>
+            <span class="sp-settings__desc">Number of reviews loaded per page. Range: 1–100. Default: 12.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Show Pagination</span>
+            <span class="sp-settings__desc">Display numbered pagination below the reviews. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Show "Show More" Button</span>
+            <span class="sp-settings__desc">Display a "Show more" button to load additional reviews. Default: enabled.</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">SEO Title Template (Category Filter)</span>
+            <span class="sp-settings__desc">Auto-generated &lt;title&gt; for filtered category views. Variables: %category%, %count%. Default: "%category% Reviews".</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">H1 Template (Category Filter)</span>
+            <span class="sp-settings__desc">H1 heading for filtered category views. Same variables. Default: "%category% Reviews".</span>
+          </div>
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Description Template (Category Filter)</span>
+            <span class="sp-settings__desc">Description for filtered category views. Default: "Read %count% customer reviews about %category% products."</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRO: ANALYTICS ===== -->
+      <div class="sp-section">
+        <h2 class="sp-section__title">Analytics <span class="sp-settings__badge sp-settings__badge--pro">PRO</span></h2>
+        <div class="sp-settings">
+          <div class="sp-settings__row">
+            <span class="sp-settings__badge sp-settings__badge--pro">Pro</span>
+            <span class="sp-settings__name">Dashboard</span>
+            <span class="sp-settings__desc">Read-only analytics dashboard showing review submissions over time, average ratings, media upload statistics, and review volume trends. No configuration required — data is collected automatically.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CTA ===== -->
+      <div class="sp-cta">
+        <h2 class="sp-cta__title">Ready to get started?</h2>
+        <p class="sp-cta__text">Download the free plugin or upgrade to Pro for advanced features.</p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a href="/#pricing" class="btn btn--primary">Get PVR Pro — $39</a>
+          <a href="/" class="btn btn--secondary">Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="pv-footer"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true, offset: 80 });</script>
+</body>
+</html>

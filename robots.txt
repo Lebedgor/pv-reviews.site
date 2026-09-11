@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /en/thank-you
+Disallow: /ru/thank-you
+Disallow: /es/thank-you
+Disallow: /fr/thank-you
+Disallow: /thank-you
+Disallow: /api/
+Disallow: /api/admin.php
+
+Sitemap: https://pv-reviews.site/sitemap.xml
+Sitemap: https://pv-reviews.site/google_sitemap.xml

@@ -1,0 +1,177 @@
+<figure class="pvr-article__banner">
+  <img src="/assets/main_wide_banner.jpg" alt="PVR Media Reviews — photo and video reviews for WooCommerce" width="1824" height="576" decoding="async" fetchpriority="high">
+</figure>
+
+<h1>📸 PVR Media Reviews — WooCommerce product reviews with photo/video, SEO review pages, and organic traffic</h1>
+
+<p class="pvr-article__lead"><strong>PVR Media Reviews</strong> is more than just a review plugin. Customer reviews here work for your store: they build SEO pages, power a marketplace-grade media gallery, and keep producing authentic user-generated content — turning reviews into sales.</p>
+
+<figure class="pvr-article__media">
+  <span class="pvr-article__video-thumb"><video muted playsinline preload="none" poster="/assets/screenshots/posters/review_add_and_publish.jpg">
+    <source src="/assets/screenshots/review_add_and_publish.mp4" type="video/mp4">
+  </video></span>
+  <figcaption>The complete walkthrough: writing a review — avatar upload with crop, photos, a video with in-browser compression — upload with progress, then moderation and publishing in the WordPress admin, and the published review with its media modal on the storefront.</figcaption>
+</figure>
+
+<div class="pvr-article__callout pvr-article__callout--cyan">
+  <h4>🖥️ Live demo</h4>
+  <p>Try everything with demo data: <a href="https://demo.pv-reviews.site/product/hoodie-with-logo/" target="_blank" rel="noopener noreferrer">product page with reviews</a> · <a href="https://demo.pv-reviews.site/product-reviews/" target="_blank" rel="noopener noreferrer">all-reviews hub with filters</a> · <a href="https://demo.pv-reviews.site/sample-page/" target="_blank" rel="noopener noreferrer">carousel widget</a> · <a href="https://demo.pv-reviews.site/reviews-grid/" target="_blank" rel="noopener noreferrer">grid widget</a>.</p>
+</div>
+
+<h3 id="pvr-get">💎 What you actually get with PVR Media Reviews Pro</h3>
+
+<div class="pvr-article__summary">
+  <a class="pvr-article__summary-card" href="/blog-seo-review-hub-woocommerce">
+    <h4>📈 SEO on autopilot</h4>
+    <p>A WooCommerce reviews hub with per-combination SEO templates, manual landing pages, and star-rating rich snippets on product pages. The content is created by your customers — you set up the templates once.</p>
+    <span class="pvr-article__summary-link">Read the SEO guide →</span>
+  </a>
+  <a class="pvr-article__summary-card" href="/blog-photo-video-reviews-woocommerce">
+    <h4>📸 Photo &amp; video reviews</h4>
+    <p>Real customer photos and videos, collected in the native WooCommerce review form — compressed in the browser, with zero server load.</p>
+    <span class="pvr-article__summary-link">Why real photos sell →</span>
+  </a>
+  <a class="pvr-article__summary-card" href="/blog-media-gallery-criteria-ratings-woocommerce">
+    <h4>🖼️ Media gallery &amp; criteria ratings</h4>
+    <p>A full media gallery with a custom in-modal video player, plus per-criteria rating breakdowns instead of one bare number.</p>
+    <span class="pvr-article__summary-link">Read about the gallery →</span>
+  </a>
+  <a class="pvr-article__summary-card" href="/blog-review-widgets-carousel-grid-woocommerce">
+    <h4>🎠 Carousel &amp; grid widgets</h4>
+    <p>Show your best WooCommerce reviews on any WordPress page — homepage, categories, landing pages — with per-breakpoint carousel and grid controls.</p>
+    <span class="pvr-article__summary-link">Read about the widgets →</span>
+  </a>
+  <a class="pvr-article__summary-card" href="/blog-review-rewards-coupons-reminders-woocommerce">
+    <h4>🎁 Coupons &amp; reminders</h4>
+    <p>Automatic coupon rewards for reviews (separate amounts for text, photo, and video), timed email reminders, and branded notifications for every review event.</p>
+    <span class="pvr-article__summary-link">Read about rewards →</span>
+  </a>
+  <a class="pvr-article__summary-card" href="/blog-review-moderation-trust-woocommerce">
+    <h4>🛡️ Moderation &amp; trust</h4>
+    <p>Anti-spam limits, Verified Purchase badges, helpfulness voting, store replies, reviewer avatars, customer account pages, and a full analytics dashboard in the WordPress admin.</p>
+    <span class="pvr-article__summary-link">Read about moderation →</span>
+  </a>
+</div>
+
+<div class="pvr-article__callout pvr-article__callout--green">
+  <h4>💰 Return on investment</h4>
+  <p><strong>📉 One-time cost</strong> — module purchase plus about 20 minutes for installation and SEO template setup.<br>
+  <strong>📈 What keeps working</strong> — organic traffic with no additional spend, conversion growth from UGC, savings on copywriting and SEO promotion.</p>
+</div>
+
+<div class="pvr-article__cta">
+  <h4>Ready to let your customers do the marketing?</h4>
+  <p>Start free on WordPress.org — or unlock the full feature set with a one-time Pro license. Buy once, use forever: no subscriptions, no monthly fees, lifetime updates.</p>
+  <div class="pvr-article__cta-actions">
+    <a href="#" class="btn btn--primary" onclick="document.getElementById('checkoutModal').classList.add('open'); return false;">Get PVR Pro — $59</a>
+    <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Download Free Plugin</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.pvr-article__media img, .pvr-article__media .pvr-article__video-thumb'));
+  if (!nodes.length) return;
+
+  var items = nodes.map(function (node) {
+    var isVideo = node.classList.contains('pvr-article__video-thumb');
+    var video = isVideo ? node.querySelector('video') : null;
+    var source = video ? video.querySelector('source') : null;
+    var fig = node.closest('figure');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    return {
+      video: isVideo,
+      src: isVideo ? ((source && source.getAttribute('src')) || (video && video.getAttribute('src')) || '') : node.getAttribute('src'),
+      poster: video ? (video.getAttribute('poster') || '') : '',
+      caption: cap ? cap.textContent.trim() : ''
+    };
+  });
+
+  var CHEV_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+  var CHEV_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+
+  var lb = document.createElement('div');
+  lb.className = 'pvr-lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.innerHTML = '<div class="pvr-lightbox__backdrop"></div>' +
+    '<div class="pvr-lightbox__stage">' +
+      '<div class="pvr-lightbox__content"></div>' +
+      '<div class="pvr-lightbox__meta"><span class="pvr-lightbox__counter"></span><p class="pvr-lightbox__caption"></p></div>' +
+    '</div>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--prev" aria-label="Previous media">' + CHEV_L + '</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--next" aria-label="Next media">' + CHEV_R + '</button>';
+  document.body.appendChild(lb);
+
+  var content = lb.querySelector('.pvr-lightbox__content');
+  var counter = lb.querySelector('.pvr-lightbox__counter');
+  var caption = lb.querySelector('.pvr-lightbox__caption');
+  var current = -1;
+
+  function render(index) {
+    current = (index + items.length) % items.length;
+    var item = items[current];
+    content.innerHTML = '';
+    if (item.video) {
+      var v = document.createElement('video');
+      v.controls = true;
+      v.autoplay = true;
+      v.muted = true;
+      v.playsInline = true;
+      if (item.poster) v.poster = item.poster;
+      v.src = item.src;
+      content.appendChild(v);
+    } else {
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.alt = '';
+      content.appendChild(img);
+    }
+    counter.textContent = (current + 1) + ' / ' + items.length;
+    caption.textContent = item.caption;
+  }
+
+  function open(index) {
+    render(index);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    content.innerHTML = '';
+    document.body.style.overflow = '';
+    current = -1;
+  }
+
+  function step(delta) {
+    if (current >= 0) render(current + delta);
+  }
+
+  nodes.forEach(function (node, index) {
+    node.addEventListener('click', function () { open(index); });
+  });
+
+  lb.querySelector('.pvr-lightbox__btn--close').addEventListener('click', close);
+  lb.querySelector('.pvr-lightbox__btn--prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.pvr-lightbox__btn--next').addEventListener('click', function () { step(1); });
+  lb.querySelector('.pvr-lightbox__backdrop').addEventListener('click', close);
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+
+  var touchX = null;
+  lb.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+    touchX = null;
+  }, { passive: true });
+})();
+</script>

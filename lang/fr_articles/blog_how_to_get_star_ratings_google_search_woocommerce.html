@@ -1,0 +1,262 @@
+<main class="article-page">
+  <div class="article-container">
+    <header class="article__header">
+      <span class="article__tag">SEO WooCommerce et Rich Snippets</span>
+      <h1 class="article__title">Comment obtenir des étoiles dans les résultats Google pour WooCommerce (guide 2026)</h1>
+      <div class="article__meta"><span>Mis à jour le 9 septembre 2026</span> &middot; <span>7 min de lecture</span></div>
+    </header>
+
+    <article class="article__content">
+      <p>Les étoiles jaunes dans les résultats Google sont l'attention la moins chère qui soit — en fait, elle est gratuite. Les listes avec étoiles et nombre d'avis obtiennent systématiquement un CTR plus élevé que les simples liens bleus, parce qu'une note répond à la première question de l'internaute (« ce produit est-il bon ? ») avant même le clic.</p>
+
+      <p>Pour une boutique WooCommerce, obtenir ces étoiles comporte deux parties : <strong>recueillir de vrais avis</strong> et <strong>les exposer en données structurées</strong> que Google peut interpréter. Ce guide couvre les deux — et montre comment <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer">PVR Media Reviews</a>, un plugin gratuit d'avis photo et vidéo pour WooCommerce, automatise la seconde partie.</p>
+
+      <div class="article-stat-row">
+        <div class="article-stat"><span class="article-stat__num">20–35%</span><span class="article-stat__label">hausse typique du CTR organique avec les étoiles</span></div>
+        <div class="article-stat"><span class="article-stat__num">JSON-LD</span><span class="article-stat__label">le format que Google lit réellement</span></div>
+        <div class="article-stat"><span class="article-stat__num">Gratuit</span><span class="article-stat__label">l'automatisation du schéma dans PVR Media Reviews</span></div>
+      </div>
+
+      <h2>✍️ Étape 1 : avoir quelque chose qui mérite une note</h2>
+      <p>Les données structurées reflètent la réalité. Google suspend les résultats enrichis des pages dont le balisage ne correspond pas au contenu visible, donc le chemin durable commence par un véritable flux d'avis — un parcours que vos clients complètent réellement.</p>
+
+      <p>Un formulaire demandant une note, une phrase de contexte et éventuellement une photo suffit. Les médias sont le multiplicateur de confiance le plus puissant : les <strong>avis photo et vidéo</strong> sont le contenu que les acheteurs capturent et partagent, et ils signalent l'authenticité autant aux acheteurs qu'aux moteurs de recherche.</p>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/review_write_form.jpg" alt="Formulaire d'avis WooCommerce où un client soumet une note en étoiles et un avis écrit" width="1377" height="1400" loading="lazy" decoding="async">
+        <figcaption>Toute note dans les résultats de recherche commence ici : un formulaire d'avis que les clients peuvent réellement compléter, avec photos et vidéos optionnelles.</figcaption>
+      </figure>
+
+      <h2>👀 Étape 2 : montrer l'histoire de la note sur la page</h2>
+      <p>Les évaluateurs qualité de Google — et vos visiteurs — attendent que la page visible corresponde aux données structurées. Un onglet d'avis crédible affiche la note moyenne, le nombre, la répartition par étoiles et les avis individuels derrière.</p>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/product_reviews_tab.jpg" alt="Onglet d'avis produit WooCommerce avec résumé de note, barres de répartition et bandeau de médias clients" width="1400" height="831" loading="lazy" decoding="async">
+        <figcaption>L'onglet d'avis dans PVR Media Reviews : résumé agrégé avec répartition et le bandeau « Customer Media » construit à partir des photos et vidéos des avis.</figcaption>
+      </figure>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/review_cards.jpg" alt="Cartes d'avis avec auteur, note, texte, médias et vote d'utilité" width="1400" height="834" loading="lazy" decoding="async">
+        <figcaption>Les cartes d'avis individuelles — la source visible de votre balisage aggregateRating et review.</figcaption>
+      </figure>
+
+      <h2>🤖 Étape 3 : les données structurées que Google lit</h2>
+      <p>Google n'interprète pas les étoiles dessinées par votre thème. Il lit <strong>Schema.org JSON-LD</strong> dans le HTML de la page. Pour les étoiles d'avis d'un produit, deux structures comptent dans le schéma <code>Product</code> :</p>
+
+      <ol>
+        <li><code>aggregateRating</code> — la note moyenne et le nombre total d'évaluations.</li>
+        <li><code>review</code> — les avis individuels : auteur, date, corps et chaque note.</li>
+      </ol>
+
+      <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Premium Leather Travel Bag",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "42",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [{
+    "@type": "Review",
+    "author": { "@type": "Person", "name": "Sarah Jenkins" },
+    "datePublished": "2026-08-10",
+    "reviewBody": "Incredible leather quality — and the photos
+                   from other buyers matched exactly.",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }]
+}</code></pre>
+
+      <div class="article-highlight-box">
+        <div class="article-highlight-box__title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Point clé
+        </div>
+        <p class="article-highlight-box__text">Les étoiles en CSS sont invisibles pour Google. Seul le JSON-LD lisible par machine compte. Si votre thème dessine des étoiles mais que rien ne génère de données structurées, vos produits n'afficheront jamais d'étoiles dans la recherche.</p>
+      </div>
+
+      <h2>⚙️ Étape 4 : automatiser (et éviter le conflit classique)</h2>
+      <p>C'est là que les sites WooCommerce bloquent habituellement : WooCommerce par défaut émet son propre schéma produit, et les plugins SEO comme <strong>Yoast</strong> ou <strong>Rank Math</strong> émettent le leur. Un plugin d'avis qui ajoute un troisième bloc parallèle crée des doublons — et les doublons sont signalés dans Google Search Console au lieu de rapporter des étoiles.</p>
+
+      <p>PVR Media Reviews résout cela en s'intégrant au système qui produit déjà votre schéma produit :</p>
+
+      <div class="article-feature-grid">
+        <div class="article-feature">
+          <div class="article-feature__icon">🛒</div>
+          <div class="article-feature__title">WooCommerce natif</div>
+          <div class="article-feature__text">Injecte Review et AggregateRating dans <code>woocommerce_structured_data_product</code> — le JSON-LD que génère WooCommerce lui-même.</div>
+        </div>
+        <div class="article-feature">
+          <div class="article-feature__icon">🟣</div>
+          <div class="article-feature__title">Compatible Yoast SEO</div>
+          <div class="article-feature__text">Se raccorde au graphe de schéma produit de Yoast (<code>wpseo_schema_product</code>), de sorte que les données d'avis fusionnent dans un bloc propre au lieu de le dupliquer.</div>
+        </div>
+        <div class="article-feature">
+          <div class="article-feature__icon">🔵</div>
+          <div class="article-feature__title">Compatible Rank Math</div>
+          <div class="article-feature__text">S'intègre à <code>rank_math/schema/product</code> de la même manière — un seul graphe, sans conflit.</div>
+        </div>
+        <div class="article-feature">
+          <div class="article-feature__icon">⚙️</div>
+          <div class="article-feature__title">Zéro édition du thème</div>
+          <div class="article-feature__text">Aucune modification de template, aucun snippet dans functions.php, aucun troisième plugin de schéma. Les notes viennent automatiquement de vos avis WooCommerce approuvés.</div>
+        </div>
+      </div>
+
+      <p>Les données derrière le balisage sont vivantes : <code>aggregateRating</code> est recalculée à partir des avis approuvés, et les dix derniers avis approuvés sont émis comme objets <code>Review</code> individuels — exactement le signal de « contenu frais » que les consignes de Google encouragent. Tout cela fait partie du plugin gratuit ; ce n'est pas derrière la licence Pro.</p>
+
+      <h2>🔍 Étape 5 : vérifier avec les outils de Google eux-mêmes</h2>
+      <ol>
+        <li>Publiez au moins un avis approuvé avec note sur un produit de test (les réglages d'auto-approbation du plugin accélèrent cela).</li>
+        <li>Ouvrez le <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer">test de résultats enrichis de Google</a>.</li>
+        <li>Saisissez l'URL de votre page produit et lancez le test.</li>
+        <li>Confirmez que l'élément <code>Product</code> est détecté avec <code>aggregateRating</code> et <code>review</code> listés sans erreur.</li>
+        <li>Répétez sur une page où Yoast ou Rank Math est actif — l'objectif de l'intégration est qu'il n'y ait aucun avertissement de schéma dupliqué.</li>
+      </ol>
+
+      <div class="pvr-article__callout pvr-article__callout--amber">
+        <h4>⏳ Une note sur les délais</h4>
+        <p>Un balisage valide rend un produit <em>candidat</em> aux étoiles d'avis. Google décide quand (et s'il) les afficher, et cela arrive généralement quand les avis s'accumulent naturellement. Une raison de plus de rendre le dépôt d'un avis — idéalement avec photo — le plus simple possible.</p>
+      </div>
+
+      <h2>🚀 Pour aller plus loin : des landing pages basées sur les avis</h2>
+      <p>Les étoiles sur la page produit ne sont que le début. PVR Pro ajoute une page de tous les avis (<code>[pvr_all_reviews]</code>) avec filtres par catégorie et fabricant, et des modèles SEO de title/description dédiés pour chaque combinaison de filtres — ainsi les requêtes comme « avis de chaussures de course » ou « avis clients {marque} » atterrissent sur de vraies pages indexables construites à partir de votre contenu d'avis. C'est une fonction Pro ($59 paiement unique), mais le schéma par produit est gratuit.</p>
+
+      <div class="pvr-article__callout pvr-article__callout--cyan">
+        <h4>🖥️ Démo en direct — regardez sur une vraie boutique</h4>
+        <p>Les étoiles, les critères et le flux d'avis sont actifs sur notre page produit de démonstration : <a href="https://demo.pv-reviews.site/product/hoodie-with-logo/" target="_blank" rel="noopener noreferrer">Hoodie with Logo</a>.</p>
+      </div>
+
+      <div class="article-highlight-box">
+        <div class="article-highlight-box__title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Transformez les avis en visibilité de recherche
+        </div>
+        <p class="article-highlight-box__text">Recueillez des avis photo et vidéo avec le plugin gratuit PVR Media Reviews, et obtenez automatiquement le schéma Review + AggregateRating pour WooCommerce — natif, compatible Yoast et Rank Math. Les étoiles dans la recherche suivront.</p>
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Obtenir le plugin gratuit</a>
+          <a href="/#pricing" class="btn btn--primary">Voir PVR Pro — $59 paiement unique</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div id="pv-footer"></div>
+</main>
+
+<script>
+(function () {
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.pvr-article__media img, .pvr-article__media .pvr-article__video-thumb'));
+  if (!nodes.length) return;
+
+  var items = nodes.map(function (node) {
+    var isVideo = node.classList.contains('pvr-article__video-thumb');
+    var video = isVideo ? node.querySelector('video') : null;
+    var source = video ? video.querySelector('source') : null;
+    var fig = node.closest('figure');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    return {
+      video: isVideo,
+      src: isVideo ? ((source && source.getAttribute('src')) || (video && video.getAttribute('src')) || '') : node.getAttribute('src'),
+      poster: video ? (video.getAttribute('poster') || '') : '',
+      caption: cap ? cap.textContent.trim() : ''
+    };
+  });
+
+  var CHEV_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+  var CHEV_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+
+  var lb = document.createElement('div');
+  lb.className = 'pvr-lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.innerHTML = '<div class="pvr-lightbox__backdrop"></div>' +
+    '<div class="pvr-lightbox__stage">' +
+      '<div class="pvr-lightbox__content"></div>' +
+      '<div class="pvr-lightbox__meta"><span class="pvr-lightbox__counter"></span><p class="pvr-lightbox__caption"></p></div>' +
+    '</div>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--prev" aria-label="Previous media">' + CHEV_L + '</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--next" aria-label="Next media">' + CHEV_R + '</button>';
+  document.body.appendChild(lb);
+
+  var content = lb.querySelector('.pvr-lightbox__content');
+  var counter = lb.querySelector('.pvr-lightbox__counter');
+  var caption = lb.querySelector('.pvr-lightbox__caption');
+  var current = -1;
+
+  function render(index) {
+    current = (index + items.length) % items.length;
+    var item = items[current];
+    content.innerHTML = '';
+    if (item.video) {
+      var v = document.createElement('video');
+      v.controls = true;
+      v.autoplay = true;
+      v.muted = true;
+      v.playsInline = true;
+      if (item.poster) v.poster = item.poster;
+      v.src = item.src;
+      content.appendChild(v);
+    } else {
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.alt = '';
+      content.appendChild(img);
+    }
+    counter.textContent = (current + 1) + ' / ' + items.length;
+    caption.textContent = item.caption;
+  }
+
+  function open(index) {
+    render(index);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    content.innerHTML = '';
+    document.body.style.overflow = '';
+    current = -1;
+  }
+
+  function step(delta) {
+    if (current >= 0) render(current + delta);
+  }
+
+  nodes.forEach(function (node, index) {
+    node.addEventListener('click', function () { open(index); });
+  });
+
+  lb.querySelector('.pvr-lightbox__btn--close').addEventListener('click', close);
+  lb.querySelector('.pvr-lightbox__btn--prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.pvr-lightbox__btn--next').addEventListener('click', function () { step(1); });
+  lb.querySelector('.pvr-lightbox__backdrop').addEventListener('click', close);
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+
+  var touchX = null;
+  lb.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+    touchX = null;
+  }, { passive: true });
+})();
+
+</script>
+

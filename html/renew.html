@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Renew Your License — PVR Media Reviews</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="assets/favicons/favicon.ico">
+</head>
+<body>
+	<div id="pv-header"></div>
+
+	<main class="renew-page">
+		<div class="renew-container">
+			<h1>Renew Your License</h1>
+			<p class="renew-subtitle">
+				Enter your license key or domain to look up your license.
+				Renewing extends <strong>your Pro license and updates</strong> for another year.
+			</p>
+
+			<form id="renewLookupForm" class="renew-card">
+				<label for="renewQuery" class="renew-label">License key or domain</label>
+				<input type="text" id="renewQuery" class="renew-input"
+					   placeholder="XXXX-XXXXXXXX-… or example.com" autocomplete="off">
+				<p id="renewLookupError" class="renew-error" hidden></p>
+				<button type="submit" id="renewLookupBtn" class="renew-btn renew-btn--secondary">
+					<span class="renew-btn__text">Find my license</span>
+				</button>
+				<button type="button" id="renewResendBtn" class="renew-btn renew-btn--link" hidden>
+					Lost your key? Send it to my email
+				</button>
+			</form>
+
+			<div id="renewLicenseCard" class="renew-card" hidden>
+				<div class="renew-info">
+					<div class="renew-info__row"><span>Domain</span><strong id="renewDomain">—</strong></div>
+					<div class="renew-info__row"><span>License key</span><strong id="renewKeyMask">—</strong></div>
+					<div class="renew-info__row"><span>Valid until</span><strong id="renewUpdatesUntil" class="renew-green">—</strong></div>
+					<p id="renewExpiredNote" class="renew-note" hidden>
+						Your license has expired — the plugin keeps working in free mode
+						until you renew.
+					</p>
+				</div>
+				<button type="button" id="renewBuyBtn" class="renew-btn renew-btn--primary">
+					<span class="renew-btn__text">Renew for 1 year</span>
+				</button>
+			</div>
+
+			<p id="renewMessage" class="renew-message" hidden></p>
+		</div>
+	</main>
+
+	<div id="pv-footer"></div>
+
+	<script src="components/include.js"></script>
+	<script src="renew.js"></script>
+</body>
+</html>

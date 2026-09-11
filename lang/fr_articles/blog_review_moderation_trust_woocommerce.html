@@ -1,0 +1,260 @@
+<main class="article-page">
+    <div class="article-container">
+
+      <header class="article__header">
+        <span class="article__tag">Modération, anti-spam et confiance</span>
+        <h1 class="article__title">Modération des avis, anti-spam et signaux de confiance pour les boutiques WooCommerce</h1>
+        <div class="article__meta">
+          <span>Publié le 10 septembre 2026</span> &middot; <span>7 min de lecture</span>
+        </div>
+      </header>
+
+      <article class="article__content">
+        <h2>🛡️ Protection anti-spam et contrôle des accès</h2>
+
+        <ul>
+          <li><strong>Limites :</strong> maximum d'avis par jour et par IP, limites séparées pour les utilisateurs enregistrés et limites quotidiennes sur le nombre et le poids des fichiers média.</li>
+          <li><strong>Permissions flexibles :</strong> qui peut laisser des avis WooCommerce — <strong>tout le monde</strong>, <strong>uniquement les utilisateurs enregistrés</strong> ou <strong>uniquement les acheteurs vérifiés</strong> (commande WooCommerce terminée requise). Permissions séparées pour les réponses et les votes.</li>
+          <li><strong>Champ honeypot</strong> + <strong>Google reCAPTCHA v3</strong> en option.</li>
+          <li><strong>Qualité du contenu</strong> : longueurs minimale et maximale des avis et des noms, champs optionnels Avantages / Inconvénients avec leurs propres limites.</li>
+          <li><strong>Un avis par produit et par utilisateur</strong> — une option contre les doublons.</li>
+          <li><strong>Validation des médias en trois couches</strong> : vérifications navigateur, nouvelles vérifications avant la création des aperçus et validation serveur du type, de la taille et des fichiers tronqués.</li>
+        </ul>
+
+        <div class="pvr-article__callout pvr-article__callout--green">
+          <h4>✅ Pourquoi c'est important pour le SEO</h4>
+          <p>Une crainte fréquente : « Si j'ouvre les avis, on va me spammer et la qualité de mon site WordPress va chuter ». Ici c'est l'inverse — les limites, l'accès « acheteurs vérifiés uniquement », le honeypot et le CAPTCHA gardent le contenu des avis WooCommerce propre. Et des avis utilisateurs propres nourrissent durablement le trafic organique.</p>
+        </div>
+
+        <div class="pvr-article__callout pvr-article__callout--violet">
+          <h4>🗃️ Vos données restent les vôtres</h4>
+          <p>Les avis sont stockés en commentaires WordPress natifs (<code>comment_type = 'review'</code>) plus les métadonnées standards de commentaires — entièrement compatibles avec WooCommerce et les outils d'import/export de commentaires. Désactiver ou même supprimer le plugin ne supprime jamais vos avis, médias ou réglages, et les migrations/exports continuent de fonctionner.</p>
+        </div>
+
+        <h2>🏅 Badge « Achat vérifié »</h2>
+
+        <p>Les avis de vrais clients ont le plus de poids. Chaque avis est automatiquement vérifié auprès des commandes WooCommerce (<code>wc_customer_bought_product</code>) : les avis de vrais acheteurs reçoivent le badge <strong>« Achat vérifié »</strong> directement sur la carte — à côté du nom et de l'avatar de l'auteur, dans les cartes d'avis, dans la modale média et dans l'email de notification admin. Le propriétaire peut revérifier le statut d'achat de n'importe quel avis depuis l'éditeur en un clic.</p>
+
+        <h2>👍 Votes d'utilité, réponses de la boutique et avatars des auteurs</h2>
+
+        <ul>
+          <li><strong>Vote utile / pas utile</strong> — les clients marquent quels avis les ont aidés. Le solde se met à jour instantanément partout où l'avis apparaît sur la page (carte produit, modale galerie, slide mobile).</li>
+          <li><strong>Réponses de la boutique</strong> — répondez à n'importe quel avis depuis l'admin WordPress, avec un flux de modération pour les réponses (approuvée/en attente).</li>
+          <li><strong>Avatars des auteurs</strong> — les acheteurs téléversent une photo de profil avec un outil de recadrage intégré ; à défaut, un fallback élégant avec les initiales.</li>
+          <li><strong>Tri</strong> sur la page de tous les avis — plus récents, note, plus utiles, présence de médias.</li>
+        </ul>
+
+        <div class="pvr-article__callout pvr-article__callout--amber">
+          <h4>⭐ Comment cela aide les ventes</h4>
+          <p>Quand le premier écran montre non pas simplement les derniers avis, mais ceux que d'autres acheteurs ont jugés utiles — plus les réponses officielles de la boutique — la confiance grandit. Les gens voient immédiatement des expériences réelles utiles, et la réponse montre que vous écoutez.</p>
+        </div>
+
+        <figure class="pvr-article__media">
+          <img src="/assets/screenshots/review_cards.jpg" alt="Cartes d'avis WooCommerce avec photos, votes d'utilité et réponses de la boutique" width="1600" height="954" loading="lazy" decoding="async">
+          <figcaption>Cartes d'avis sur la boutique : photos et vidéos, notes en étoiles, badges « achat vérifié », votes d'utilité et la réponse officielle de la boutique.</figcaption>
+        </figure>
+
+        <figure class="pvr-article__media pvr-article__media--narrow">
+          <span class="pvr-article__video-thumb"><video muted playsinline preload="none" poster="/assets/screenshots/posters/avatar_add_and_crop.jpg">
+            <source src="/assets/screenshots/avatar_add_and_crop.mp4" type="video/mp4">
+          </video></span>
+          <figcaption>Téléversement de l'avatar de l'auteur : choisissez une image, déplacez le cadre de recadrage, confirmez — la photo recadrée devient l'identité de l'auteur dans tous ses avis.</figcaption>
+        </figure>
+
+        <h2>👤 Pages du compte client</h2>
+
+        <ul>
+          <li><strong>Mon compte → Avatar</strong> — les clients téléversent et recadrent leur photo de profil directement depuis leur compte WooCommerce ; l'apparaît ensuite dans chacun de leurs avis.</li>
+          <li><strong>Mon compte → Mes avis</strong> — le client voit tous ses avis avec statuts de modération, médias joints et lightbox. Fini les tickets « où est mon avis ? ».</li>
+        </ul>
+
+        <h2>🧰 Administration WordPress : tout à portée de main</h2>
+
+        <div class="pvr-article__cols">
+          <div>
+            <h4>📝 Édition des avis</h4>
+            <ul>
+              <li>Sélection du produit, note, statut de publication</li>
+              <li>Miniatures des médias avec tailles de fichiers, lightbox média dans l'admin</li>
+              <li>Bloc coupon : émettre / renvoyer / supprimer par avis</li>
+              <li>Éditeur de notes par critères</li>
+            </ul>
+          </div>
+          <div>
+            <h4>📊 Tableau de bord analytique</h4>
+            <ul>
+              <li>Plages 7/30/90 jours et tout l'historique</li>
+              <li>Totaux, note moyenne, distribution des notes</li>
+              <li>Statistiques médias, acheteurs vérifiés, votes, taux de réponse</li>
+              <li>Tendance quotidienne, détail mensuel, coupons émis/utilisés</li>
+              <li>Top-10 des produits par avis — et produits à surveiller (note moyenne faible avec assez d'avis)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>⚙️ Réglages et outils</h4>
+            <ul>
+              <li>Général, Limites et anti-spam, Sécurité, Médias, E-mails</li>
+              <li>Import/export des réglages, synchronisation du schéma de la base</li>
+              <li>System Info : configurateur des limites d'upload PHP avec configuration automatique du serveur et retour arrière</li>
+              <li>Auto-mise à jour du plugin avec réinstallation depuis l'admin</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pvr-article__callout pvr-article__callout--violet">
+          <h4>💡 En bref :</h4>
+          <p>Avis, médias, critères, réglages SEO, analytique — tout dans l'admin natif de WordPress, au même endroit. Pas besoin de sauter entre une douzaine d'écrans pour modérer un avis WooCommerce ou mettre à jour un modèle SEO.</p>
+        </div>
+
+        <h2>🌍 7 langues incluses</h2>
+
+        <p>Le plugin est livré avec des traductions intégrées : <strong>anglais, espagnol, français, allemand, polonais, portugais du Brésil et russe</strong>. Le formulaire d'avis, les modales et les e-mails sont localisés automatiquement — et les noms des critères personnalisés sont stockés par langue, donc une boutique multilingue affiche les critères dans la locale du visiteur.</p>
+
+        <div class="pvr-article__callout pvr-article__callout--cyan">
+          <h4>🖥️ Démo en direct — regardez sur une vraie boutique</h4>
+          <p>Les cartes d'avis avec badges « Achat vérifié », votes d'utilité et réponses de la boutique fonctionnent sur la page produit de démonstration : <a href="https://demo.pv-reviews.site/product/hoodie-with-logo/" target="_blank" rel="noopener noreferrer">Hoodie with Logo</a>.</p>
+        </div>
+
+        <div class="article-highlight-box">
+          <div class="article-highlight-box__title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v10c0 6 8 10 8 10z"/></svg>
+            Collectez des avis en toute confiance
+          </div>
+          <p class="article-highlight-box__text">Limites anti-spam, permissions acheteurs vérifiés, flux de modération, votes d'utilité, réponses de la boutique et un tableau de bord analytique complet — tout inclus dans PVR Media Reviews Pro pour $59 en paiement unique.</p>
+          <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="/#pricing" class="btn btn--primary">Acheter PVR Pro — $59</a>
+            <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Télécharger la version gratuite</a>
+          </div>
+        </div>
+
+        <section class="article-related">
+          <h3>Guides associés</h3>
+          <div class="article-related__grid">
+            <a href="/blog-review-rewards-coupons-reminders-woocommerce" class="article-related__card">
+              <span class="article-related__tag">Automatisation et récompenses</span>
+              <span class="article-related__title">Coupons pour avis et rappels automatiques pour WooCommerce</span>
+            </a>
+            <a href="/blog-media-gallery-criteria-ratings-woocommerce" class="article-related__card">
+              <span class="article-related__tag">UX des avis</span>
+              <span class="article-related__title">Galerie média et critères d'évaluation personnalisés</span>
+            </a>
+            <a href="/blog-how-to-get-star-ratings-google-search-woocommerce" class="article-related__card">
+              <span class="article-related__tag">SEO et Rich Snippets</span>
+              <span class="article-related__title">Comment obtenir des étoiles dans les résultats Google pour WooCommerce</span>
+            </a>
+          </div>
+        </section>
+      </article>
+
+    </div>
+
+  <div id="pv-footer"></div>
+
+<script>
+(function () {
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.pvr-article__media img, .pvr-article__media .pvr-article__video-thumb'));
+  if (!nodes.length) return;
+
+  var items = nodes.map(function (node) {
+    var isVideo = node.classList.contains('pvr-article__video-thumb');
+    var video = isVideo ? node.querySelector('video') : null;
+    var source = video ? video.querySelector('source') : null;
+    var fig = node.closest('figure');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    return {
+      video: isVideo,
+      src: isVideo ? ((source && source.getAttribute('src')) || (video && video.getAttribute('src')) || '') : node.getAttribute('src'),
+      poster: video ? (video.getAttribute('poster') || '') : '',
+      caption: cap ? cap.textContent.trim() : ''
+    };
+  });
+
+  var CHEV_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+  var CHEV_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+
+  var lb = document.createElement('div');
+  lb.className = 'pvr-lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.innerHTML = '<div class="pvr-lightbox__backdrop"></div>' +
+    '<div class="pvr-lightbox__stage">' +
+      '<div class="pvr-lightbox__content"></div>' +
+      '<div class="pvr-lightbox__meta"><span class="pvr-lightbox__counter"></span><p class="pvr-lightbox__caption"></p></div>' +
+    '</div>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--prev" aria-label="Previous media">' + CHEV_L + '</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--next" aria-label="Next media">' + CHEV_R + '</button>';
+  document.body.appendChild(lb);
+
+  var content = lb.querySelector('.pvr-lightbox__content');
+  var counter = lb.querySelector('.pvr-lightbox__counter');
+  var caption = lb.querySelector('.pvr-lightbox__caption');
+  var current = -1;
+
+  function render(index) {
+    current = (index + items.length) % items.length;
+    var item = items[current];
+    content.innerHTML = '';
+    if (item.video) {
+      var v = document.createElement('video');
+      v.controls = true;
+      v.autoplay = true;
+      v.muted = true;
+      v.playsInline = true;
+      if (item.poster) v.poster = item.poster;
+      v.src = item.src;
+      content.appendChild(v);
+    } else {
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.alt = '';
+      content.appendChild(img);
+    }
+    counter.textContent = (current + 1) + ' / ' + items.length;
+    caption.textContent = item.caption;
+  }
+
+  function open(index) {
+    render(index);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    content.innerHTML = '';
+    document.body.style.overflow = '';
+    current = -1;
+  }
+
+  function step(delta) {
+    if (current >= 0) render(current + delta);
+  }
+
+  nodes.forEach(function (node, index) {
+    node.addEventListener('click', function () { open(index); });
+  });
+
+  lb.querySelector('.pvr-lightbox__btn--close').addEventListener('click', close);
+  lb.querySelector('.pvr-lightbox__btn--prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.pvr-lightbox__btn--next').addEventListener('click', function () { step(1); });
+  lb.querySelector('.pvr-lightbox__backdrop').addEventListener('click', close);
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+
+  var touchX = null;
+  lb.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+    touchX = null;
+  }, { passive: true });
+})();
+</script>
+

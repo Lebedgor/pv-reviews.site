@@ -1,0 +1,242 @@
+<main class="article-page">
+  <div class="article-container">
+    <header class="article__header">
+      <span class="article__tag">Optimización de costes y propiedad de los datos</span>
+      <h1 class="article__title">Las mejores alternativas self-hosted a Judge.me y Yotpo para WooCommerce (2026)</h1>
+      <div class="article__meta"><span>Actualizado el 9 de septiembre de 2026</span> &middot; <span>9 min de lectura</span></div>
+    </header>
+
+    <article class="article__content">
+      <p>Las plataformas de reseñas en la nube como <strong>Judge.me</strong> y <strong>Yotpo</strong> resolvieron un problema real — hace diez años, construir un sistema de reseñas era difícil, así que alquilar uno tenía sentido. En 2026, sobre WordPress y WooCommerce, esa lógica se ha invertido. Tu tienda ya tiene base de datos, biblioteca de medios, cuentas de usuario e infraestructura de correo. Alquilar un widget de terceros para hacer lo que tu propio sitio puede hacer de forma nativa significa pagar mensualmente por algo que podrías poseer.</p>
+
+      <p>Esta guía desglosa los costes reales de las plataformas de reseñas en la nube, qué deberían significar en la práctica las «reseñas self-hosted», y cómo lo implementa <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer">PVR Media Reviews for WooCommerce</a> — un plugin gratuito de reseñas con foto y vídeo.</p>
+
+      <h2>💸 Los tres costes ocultos de las plataformas de reseñas en la nube</h2>
+
+      <h3>💳 1. La suscripción nunca termina</h3>
+      <p>Las plataformas de reseñas en la nube tarifican por volumen de pedidos. A medida que tu tienda crece, la factura crece — y las funciones que realmente impulsan la conversión (reseñas en vídeo, marca personalizada, integraciones avanzadas) están en los planes superiores. Una tienda que paga $50–$150/mes gasta $1,800–$5,400 en tres años por un componente que añade un formulario de reseñas a las páginas de producto.</p>
+
+      <h3>🔒 2. No eres dueño de tu prueba social</h3>
+      <p>Con una plataforma en la nube, tus reseñas — texto, fotos de clientes, vídeos, historial de valoraciones — viven en los servidores del proveedor, renderizadas a través de sus widgets y scripts. Si cancelas, bajas de plan, o el proveedor cambia las condiciones, tu contenido de reseñas deja de mostrarse. Años de confianza acumulada pueden desaparecer de tus páginas de producto con una sola decisión de facturación. Migrar ese contenido de vuelta suele ser posible en teoría y doloroso en la práctica.</p>
+
+      <h3>🐌 3. Cada página de producto paga un impuesto de rendimiento</h3>
+      <p>Los widgets de reseñas en la nube inyectan paquetes de JavaScript externos, iframes y píxeles de seguimiento en cada una de tus páginas de producto. Es código de terceros que no controlas, cargando en tus páginas comerciales más importantes — y es una causa habitual de empeoramiento de las Core Web Vitals.</p>
+
+      <h3>Lo que la nube cuesta realmente en 3 años</h3>
+      <table class="article-cost-table">
+        <thead>
+          <tr><th>Plataforma</th><th>Mensual</th><th>Total a 3 años</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Yotpo (plan medio)</td><td class="cost-expensive">$150/mes</td><td class="cost-expensive">$5,400+</td></tr>
+          <tr><td>Stamped.io (growth)</td><td class="cost-expensive">$59/mes</td><td class="cost-expensive">$2,124+</td></tr>
+          <tr><td>Judge.me (pro)</td><td class="cost-expensive">$15/mes</td><td class="cost-expensive">$540+</td></tr>
+          <tr class="highlight-row"><td>PVR Media Reviews Free — reseñas con foto y vídeo incluidas</td><td class="cost-savings">$0/mes</td><td class="cost-savings">$0</td></tr>
+          <tr class="highlight-row"><td>PVR Media Reviews Pro (todas las funciones)</td><td class="cost-savings">$0/mes</td><td class="cost-savings">$59 pago único</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🧭 Qué deberían significar realmente las «reseñas self-hosted»</h2>
+      <p>Dejar una plataforma en la nube no debería significar degradarte a un formulario de comentarios básico. Un sistema de reseñas self-hosted serio tiene que igualar la experiencia de la nube donde importa — medios, acabado, anti-spam — eliminando las partes que no te sirven. Aquí está la lista completa, y cómo puntúa PVR Media Reviews en cada punto.</p>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/review_write_form.jpg" alt="Formulario de reseña WooCommerce vacío con valoración de estrellas, subida de avatar, campos de pros y contras y zona de subida de medios" width="1377" height="1400" loading="eager" decoding="async">
+        <figcaption>El formulario de reseña: valoración de estrellas, avatar con recorte integrado, pros y contras, ciudad y teléfono opcionales, y una zona de subida de fotos y vídeos — el cliente nunca sale de la página de producto.</figcaption>
+      </figure>
+
+      <div class="saas-comp__table-wrapper" style="margin:32px 0;overflow-x:auto;">
+        <table class="saas-comp__table">
+          <thead>
+            <tr><th>Requisito</th><th style="background:#f0fdf4;">PVR Media Reviews (self-hosted)</th><th>Widget en la nube (Judge.me, Yotpo…)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Dónde se almacenan las reseñas</strong></td><td style="color:#166534;">En tu propia base de datos, como reseñas nativas de WordPress</td><td>Servidores en la nube del proveedor</td></tr>
+            <tr><td><strong>Dónde viven los medios</strong></td><td style="color:#166534;">En tu propio directorio <code>uploads</code>, rutas relativas, incluidos en tus backups</td><td>CDN del proveedor; alquilado</td></tr>
+            <tr><td><strong>Subida de fotos y vídeos</strong></td><td style="color:#166534;">Gratis, para siempre — sin cuotas</td><td>A menudo limitado por el plan de suscripción</td></tr>
+            <tr><td><strong>Procesamiento de vídeo</strong></td><td style="color:#166534;">Compresión en el navegador — 0% de carga del servidor</td><td>Infraestructura en la nube que pagas mensualmente</td></tr>
+            <tr><td><strong>Impacto en la velocidad de página</strong></td><td style="color:#166534;">Solo assets del plugin; variantes WebP; sin scripts de terceros</td><td>Paquetes JS externos e iframes en cada página de producto</td></tr>
+            <tr><td><strong>Si dejas de pagar</strong></td><td style="color:#166534;">Nada cambia — las reseñas siguen funcionando</td><td>Los widgets dejan de renderizarse; puede perderse el acceso a los medios</td></tr>
+            <tr><td><strong>Marcaje de esquema</strong></td><td style="color:#166534;">Integrado, compatible con Yoast y Rank Math</td><td>Inyectado por los scripts del proveedor</td></tr>
+            <tr><td><strong>Emails y marca</strong></td><td style="color:#166534;">Emails de marca desde la identidad de tu propia tienda</td><td>Plantillas del proveedor en su dominio</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>✨ El acabado también importa: los detalles que al self-hosted le faltaban</h2>
+      <p>El argumento histórico de las plataformas en la nube era la experiencia de usuario — los widgets alojados se veían mejor que los formularios torpes de los plugins. Esa brecha se ha cerrado. Algunos ejemplos de PVR Media Reviews:</p>
+
+      <h3>Avatares con herramienta de recorte integrada</h3>
+      <p>Cuando un cliente elige una foto de perfil para su reseña, se abre una modal compacta de recorte donde selecciona exactamente el fragmento que quiere — sin editor de imágenes, sin servicio externo, sin cuadrados estirados. La imagen recortada se procesa en el servidor hasta un avatar limpio de 500&nbsp;px.</p>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/avatar_crop.jpg" alt="Modal de recorte de avatar en PVR Media Reviews después de que el cliente seleccionó una foto de perfil" width="1400" height="1371" loading="lazy" decoding="async">
+        <figcaption>Recorte de avatar en una mini modal: el cliente elige el fragmento; el plugin se encarga del redimensionado y el almacenamiento.</figcaption>
+      </figure>
+
+      <h3>Una experiencia real de visualización de medios</h3>
+      <p>Hacer clic en cualquier foto o vídeo abre un visor completo: los medios en grande a un lado, la reseña completa — autor, texto, votación de utilidad, respuestas — al otro. Una modal de galería separada reúne todos los medios del producto. Los vídeos se reproducen en un reproductor personalizado con controles adecuados. Nada redirige a una página externa; nada sale de tu servidor.</p>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/modal_media_and_review_details.jpg" alt="Visor de medios self-hosted con foto grande a la izquierda y detalles completos de la reseña a la derecha" width="1400" height="808" loading="lazy" decoding="async">
+        <figcaption>El visor de medios mantiene la prueba y el contexto juntos — rápido, self-hosted y sin publicidad.</figcaption>
+      </figure>
+
+      <h3>Señales de confianza que vienen de serie</h3>
+      <ul>
+        <li><strong>Distintivos de compra verificada</strong> — comprobados automáticamente contra el historial de pedidos de WooCommerce.</li>
+        <li><strong>Votación de utilidad</strong> — un voto por visitante, con actualizaciones del balance en vivo dondequiera que aparezca la reseña.</li>
+        <li><strong>Respuestas de la tienda</strong> — respuestas en hilo con la insignia «Equipo de soporte», moderables desde el administrador.</li>
+        <li><strong>Anti-spam</strong> — honeypot invisible, reCAPTCHA v3 opcional, límites diarios por IP y modos de acceso solo para compradores, para que abrir las reseñas a todos no abra la puerta al spam.</li>
+      </ul>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/review_cards.jpg" alt="Dos tarjetas de reseñas de clientes completas con avatares, distintivos verificados, medios y votación de utilidad" width="1400" height="834" loading="lazy" decoding="async">
+        <figcaption>Tarjetas de reseñas con avatares, distintivos verificados, medios y votación — la calidad de frontend que los compradores esperan de las plataformas alojadas, funcionando en tu propio stack.</figcaption>
+      </figure>
+
+      <h2>🔄 La pregunta de la migración: ¿qué pasa con las reseñas existentes?</h2>
+      <div class="pvr-article__callout pvr-article__callout--green">
+        <h4>😌 Dos datos tranquilizadores sobre PVR Media Reviews</h4>
+        <p><strong>Tus reseñas de WooCommerce ya son compatibles.</strong> El plugin guarda las reseñas como comentarios nativos de WordPress con tipo <code>review</code> — tus valoraciones de producto existentes siguen funcionando, y el plugin las muestra en su plantilla mejorada. <strong>La importación de medios está integrada.</strong> Desde el editor del administrador puedes adjuntar fotos y vídeos de la biblioteca de medios de WordPress a cualquier reseña — útil al consolidar medios de un plugin anterior o de una importación manual.</p>
+      </div>
+
+      <h2>✅ Lista de verificación para cambiar desde una plataforma SaaS de reseñas</h2>
+      <ol>
+        <li><strong>Exporta lo que puedas</strong> del proveedor en la nube (como mínimo: texto de la reseña, autor, valoración, fecha).</li>
+        <li><strong>Instala PVR Media Reviews gratuito</strong> — tus reseñas nativas aparecen de inmediato en la nueva interfaz.</li>
+        <li><strong>Vuelve a importar los medios donde sea posible</strong> con las herramientas de medios del administrador.</li>
+        <li><strong>Verifica el esquema</strong> con la prueba de resultados enriquecidos de Google — el plugin inyecta JSON-LD Review y AggregateRating en los datos estructurados nativos de WooCommerce, Yoast y Rank Math.</li>
+        <li><strong>Cancela la suscripción</strong> — y comprueba que nada cambia en tu sitio.</li>
+      </ol>
+
+      <div class="pvr-article__callout pvr-article__callout--cyan">
+        <h4>🖥️ Demo en vivo — míralo en una tienda real</h4>
+        <p>Self-hosted no significa básico. Comprueba la experiencia de reseñas en nuestra página de producto de demostración: <a href="https://demo.pv-reviews.site/product/hoodie-with-logo/" target="_blank" rel="noopener noreferrer">Hoodie with Logo</a>.</p>
+      </div>
+
+      <div class="article-highlight-box">
+        <div class="article-highlight-box__title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Sé dueño de tus reseñas
+        </div>
+        <p class="article-highlight-box__text">PVR Media Reviews te da reseñas con foto y vídeo para WooCommerce gratis para siempre — medios en tu hosting, compresión en el navegador, emails de marca, votación, respuestas y marcado de esquema. Pro añade criterios de valoración, recordatorios, cupones de recompensa, widgets, analítica y una página SEO de todas las reseñas por $59 pago único.</p>
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Probar la versión gratuita</a>
+          <a href="/#pricing" class="btn btn--primary">Comprar PVR Pro — $59 pago único</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div id="pv-footer"></div>
+</main>
+
+<script>
+(function () {
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.pvr-article__media img, .pvr-article__media .pvr-article__video-thumb'));
+  if (!nodes.length) return;
+
+  var items = nodes.map(function (node) {
+    var isVideo = node.classList.contains('pvr-article__video-thumb');
+    var video = isVideo ? node.querySelector('video') : null;
+    var source = video ? video.querySelector('source') : null;
+    var fig = node.closest('figure');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    return {
+      video: isVideo,
+      src: isVideo ? ((source && source.getAttribute('src')) || (video && video.getAttribute('src')) || '') : node.getAttribute('src'),
+      poster: video ? (video.getAttribute('poster') || '') : '',
+      caption: cap ? cap.textContent.trim() : ''
+    };
+  });
+
+  var CHEV_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+  var CHEV_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+
+  var lb = document.createElement('div');
+  lb.className = 'pvr-lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.innerHTML = '<div class="pvr-lightbox__backdrop"></div>' +
+    '<div class="pvr-lightbox__stage">' +
+      '<div class="pvr-lightbox__content"></div>' +
+      '<div class="pvr-lightbox__meta"><span class="pvr-lightbox__counter"></span><p class="pvr-lightbox__caption"></p></div>' +
+    '</div>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--prev" aria-label="Previous media">' + CHEV_L + '</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--next" aria-label="Next media">' + CHEV_R + '</button>';
+  document.body.appendChild(lb);
+
+  var content = lb.querySelector('.pvr-lightbox__content');
+  var counter = lb.querySelector('.pvr-lightbox__counter');
+  var caption = lb.querySelector('.pvr-lightbox__caption');
+  var current = -1;
+
+  function render(index) {
+    current = (index + items.length) % items.length;
+    var item = items[current];
+    content.innerHTML = '';
+    if (item.video) {
+      var v = document.createElement('video');
+      v.controls = true;
+      v.autoplay = true;
+      v.muted = true;
+      v.playsInline = true;
+      if (item.poster) v.poster = item.poster;
+      v.src = item.src;
+      content.appendChild(v);
+    } else {
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.alt = '';
+      content.appendChild(img);
+    }
+    counter.textContent = (current + 1) + ' / ' + items.length;
+    caption.textContent = item.caption;
+  }
+
+  function open(index) {
+    render(index);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    content.innerHTML = '';
+    document.body.style.overflow = '';
+    current = -1;
+  }
+
+  function step(delta) {
+    if (current >= 0) render(current + delta);
+  }
+
+  nodes.forEach(function (node, index) {
+    node.addEventListener('click', function () { open(index); });
+  });
+
+  lb.querySelector('.pvr-lightbox__btn--close').addEventListener('click', close);
+  lb.querySelector('.pvr-lightbox__btn--prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.pvr-lightbox__btn--next').addEventListener('click', function () { step(1); });
+  lb.querySelector('.pvr-lightbox__backdrop').addEventListener('click', close);
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+
+  var touchX = null;
+  lb.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+    touchX = null;
+  }, { passive: true });
+})();
+
+</script>
+

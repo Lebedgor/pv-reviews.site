@@ -1,0 +1,242 @@
+<main class="article-page">
+  <div class="article-container">
+    <header class="article__header">
+      <span class="article__tag">Оптимизация расходов и владение данными</span>
+      <h1 class="article__title">Лучшие self-hosted альтернативы Judge.me и Yotpo для WooCommerce (2026)</h1>
+      <div class="article__meta"><span>Обновлено 9 сентября 2026</span> &middot; <span>9 мин чтения</span></div>
+    </header>
+
+    <article class="article__content">
+      <p>Облачные отзывные платформы вроде <strong>Judge.me</strong> и <strong>Yotpo</strong> решали реальную проблему — десять лет назад построить систему отзывов было сложно, и аренда имела смысл. В 2026 году, на WordPress и WooCommerce, эта логика перевернулась. У вашего магазина уже есть база данных, медиатека, аккаунты пользователей и почтовая инфраструктура. Арендовать сторонний виджет, чтобы он делал то, что ваш сайт умеет нативно, — значит платить ежемесячно за то, чем можно владеть.</p>
+
+      <p>Этот гайд разбирает реальные расходы облачных платформ отзывов, что «self-hosted отзывы» должны значить на практике, и как это реализует <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer">PVR Media Reviews for WooCommerce</a> — бесплатный плагин фото- и видеоотзывов.</p>
+
+      <h2>💸 Три скрытых расхода облачных платформ отзывов</h2>
+
+      <h3>💳 1. Подписка не кончается никогда</h3>
+      <p>Облачные платформы тарифицируют по объёму заказов. Магазин растёт — счёт растёт, а функции, которые реально двигают конверсию (видеоотзывы, кастомный брендинг, продвинутые интеграции), вынесены в старшие тарифы. Магазин, платящий $50–$150/месяц, за три года отдаёт $1,800–$5,400 за компонент, который добавляет форму отзыва на страницы товаров.</p>
+
+      <h3>🔒 2. Вы не владеете своим соцдоказательством</h3>
+      <p>С облачной платформой ваши отзывы — тексты, фото покупателей, видео, история рейтингов — живут на серверах провайдера и рендерятся через его виджеты и скрипты. Отменили подписку, перешли на тариф ниже или провайдер поменял условия — отзывный контент перестаёт отображаться. Годы накопленного доверия могут исчезнуть со страниц товаров одним платёжным решением. Выкачать этот контент обратно обычно возможно в теории и болезненно на практике.</p>
+
+      <h3>🐌 3. Каждая страница товара платит налог на производительность</h3>
+      <p>Облачные виджеты отзывов встраивают внешние JS-бандлы, iframe и трекинг-пиксели в каждую вашу страницу товара. Это сторонний код, который вы не контролируете, загружающийся на самых важных коммерческих страницах, — и частая причина просадки Core Web Vitals.</p>
+
+      <h3>Сколько облако реально стоит за 3 года</h3>
+      <table class="article-cost-table">
+        <thead>
+          <tr><th>Платформа</th><th>В месяц</th><th>Итого за 3 года</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Yotpo (средний тариф)</td><td class="cost-expensive">$150/мес</td><td class="cost-expensive">$5,400+</td></tr>
+          <tr><td>Stamped.io (growth)</td><td class="cost-expensive">$59/мес</td><td class="cost-expensive">$2,124+</td></tr>
+          <tr><td>Judge.me (pro)</td><td class="cost-expensive">$15/мес</td><td class="cost-expensive">$540+</td></tr>
+          <tr class="highlight-row"><td>PVR Media Reviews Free — фото- и видеоотзывы включены</td><td class="cost-savings">$0/мес</td><td class="cost-savings">$0</td></tr>
+          <tr class="highlight-row"><td>PVR Media Reviews Pro (все функции)</td><td class="cost-savings">$0/мес</td><td class="cost-savings">$59 разово</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🧭 Что «self-hosted отзывы» должны значить на самом деле</h2>
+      <p>Уход с облачной платформы не должен означать деградацию до голой формы комментариев. Серьёзная self-hosted система отзывов должна догонять облако там, где это важно — медиа, вылизанность, анти-спам, — убирая то, что вам не служит. Вот полный чек-лист и как PVR Media Reviews оценивается по каждому пункту.</p>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/review_write_form.jpg" alt="Пустая форма отзыва WooCommerce со звёздами, загрузкой аватара, полями достоинств/недостатков и dropzone медиа" width="1377" height="1400" loading="eager" decoding="async">
+        <figcaption>Форма отзыва: звёздный рейтинг, аватар со встроенным кропом, достоинства/недостатки, опциональные город и телефон, dropzone для фото/видео — покупатель не покидает страницу товара.</figcaption>
+      </figure>
+
+      <div class="saas-comp__table-wrapper" style="margin:32px 0;overflow-x:auto;">
+        <table class="saas-comp__table">
+          <thead>
+            <tr><th>Требование</th><th style="background:#f0fdf4;">PVR Media Reviews (self-hosted)</th><th>Облачный виджет (Judge.me, Yotpo…)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Где хранятся отзывы</strong></td><td style="color:#166534;">Ваша собственная база, как нативные отзывы WordPress</td><td>Облачные серверы провайдера</td></tr>
+            <tr><td><strong>Где живут медиа</strong></td><td style="color:#166534;">Ваш каталог <code>uploads</code>, относительные пути, включены в ваши бэкапы</td><td>CDN провайдера; аренда</td></tr>
+            <tr><td><strong>Загрузка фото и видео</strong></td><td style="color:#166534;">Бесплатно, навсегда — без квот</td><td>Часто закрыто тарифом подписки</td></tr>
+            <tr><td><strong>Обработка видео</strong></td><td style="color:#166534;">Сжатие в браузере — 0% нагрузки на сервер</td><td>Облачная инфраструктура, за которую вы платите ежемесячно</td></tr>
+            <tr><td><strong>Влияние на скорость страниц</strong></td><td style="color:#166534;">Только ассеты плагина; WebP-варианты; без сторонних скриптов</td><td>Внешние JS-бандлы и iframe на каждой странице товара</td></tr>
+            <tr><td><strong>Если перестали платить</strong></td><td style="color:#166534;">Ничего не меняется — отзывы продолжают работать</td><td>Виджеты перестают рендериться; доступ к медиа может быть утерян</td></tr>
+            <tr><td><strong>Разметка схемы</strong></td><td style="color:#166534;">Встроена, совместима с Yoast и Rank Math</td><td>Внедряется скриптами провайдера</td></tr>
+            <tr><td><strong>Письма и брендинг</strong></td><td style="color:#166534;">Фирменные письма от имени вашего магазина</td><td>Шаблоны провайдера на его домене</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>✨ Вылизанность тоже важна: детали, которых self-hosted раньше не хватало</h2>
+      <p>Исторический аргумент за облака — пользовательский опыт: хостед-виджеты выглядели симпатичнее неуклюжих форм плагинов. Этот разрыв закрылся. Несколько примеров из PVR Media Reviews:</p>
+
+      <h3>Аватары со встроенным кропом</h3>
+      <p>Когда покупатель выбирает фото профиля для отзыва, открывается компактная модалка кропа, где он выбирает ровно нужный фрагмент — без графического редактора, без внешнего сервиса, без растянутых квадратов. Обрезанное изображение обрабатывается на сервере в аккуратный аватар 500&nbsp;px.</p>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/avatar_crop.jpg" alt="Модалка кропа аватара в PVR Media Reviews после выбора фото профиля" width="1400" height="1371" loading="lazy" decoding="async">
+        <figcaption>Кроп аватара в мини-модалке: покупатель выбирает фрагмент; ресайз и хранение — забота плагина.</figcaption>
+      </figure>
+
+      <h3>Полноценный опыт просмотра медиа</h3>
+      <p>Клик по любому фото или видео открывает полноценный просмотрщик: большое медиа с одной стороны, полный отзыв — автор, текст, голосование «полезно», ответы — с другой. Отдельная модалка галереи собирает все медиа товара. Видео проигрывается в кастомном плеере с нормальными органами управления. Ничего не редиректит на внешние страницы; ничего не уходит с вашего сервера.</p>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/modal_media_and_review_details.jpg" alt="Self-hosted просмотрщик медиа: большое фото слева, детали отзыва справа" width="1400" height="808" loading="lazy" decoding="async">
+        <figcaption>Просмотрщик держит доказательство и контекст вместе — быстро, self-hosted и без рекламы.</figcaption>
+      </figure>
+
+      <h3>Сигналы доверия, которые идут по умолчанию</h3>
+      <ul>
+        <li><strong>Бейджи «Проверенная покупка»</strong> — сверяются автоматически с историей заказов WooCommerce.</li>
+        <li><strong>Голосование «полезно»</strong> — один голос на посетителя, с живым обновлением баланса везде, где отзыв отображается.</li>
+        <li><strong>Ответы магазина</strong> — тредовые ответы с бейджем «Служба поддержки», модерация из админки.</li>
+        <li><strong>Анти-спам</strong> — невидимый ханипот, опциональная reCAPTCHA v3, дневные лимиты по IP и режимы доступа «только покупатели», так что открытие отзывов для всех не открывает дверь спаму.</li>
+      </ul>
+
+      <figure class="pvr-article__media">
+        <img src="/assets/blog_images/review_cards.jpg" alt="Две полноценные карточки отзывов с аватарами, бейджами подтверждения, медиа и голосованием" width="1400" height="834" loading="lazy" decoding="async">
+        <figcaption>Карточки отзывов с аватарами, бейджами, медиа и голосованием — фронтенд-качество, которого покупатели ждут от облачных платформ, работающее на вашем собственном стеке.</figcaption>
+      </figure>
+
+      <h2>🔄 Вопрос миграции: что будет с существующими отзывами?</h2>
+      <div class="pvr-article__callout pvr-article__callout--green">
+        <h4>😌 Два успокаивающих факта именно про PVR Media Reviews</h4>
+        <p><strong>Ваши отзывы WooCommerce уже совместимы.</strong> Плагин хранит отзывы как нативные комментарии WordPress с типом <code>review</code> — существующие рейтинги товаров продолжают работать, а плагин показывает их в своём расширенном шаблоне. <strong>Импорт медиа встроен.</strong> Из редактора в админке к любому отзыву можно прикрепить фото и видео из медиатеки WordPress — полезно при консолидации медиа с предыдущего плагина или ручного импорта.</p>
+      </div>
+
+      <h2>✅ Чек-лист перехода с SaaS-платформы отзывов</h2>
+      <ol>
+        <li><strong>Экспортируйте что можно</strong> из облачного провайдера (как минимум: текст отзыва, автор, оценка, дата).</li>
+        <li><strong>Установите PVR Media Reviews Free</strong> — ваши нативные отзывы сразу появятся в новом интерфейсе.</li>
+        <li><strong>Импортируйте медиа, где доступно</strong>, через инструменты медиа в админке.</li>
+        <li><strong>Проверьте схему</strong> через Google Rich Results Test — плагин встраивает JSON-LD Review и AggregateRating в нативные структурированные данные WooCommerce, вывод Yoast и Rank Math.</li>
+        <li><strong>Отмените подписку</strong> — и заметьте, что на сайте ничего не изменилось.</li>
+      </ol>
+
+      <div class="pvr-article__callout pvr-article__callout--cyan">
+        <h4>🖥️ Живое демо — посмотрите на реальном магазине</h4>
+        <p>Self-hosted не значит «голый». Проверьте отзывный опыт на нашей демо-странице товара: <a href="https://demo.pv-reviews.site/product/hoodie-with-logo/" target="_blank" rel="noopener noreferrer">Hoodie with Logo</a>.</p>
+      </div>
+
+      <div class="article-highlight-box">
+        <div class="article-highlight-box__title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Владейте своими отзывами
+        </div>
+        <p class="article-highlight-box__text">PVR Media Reviews даёт фото- и видеоотзывы для WooCommerce бесплатно навсегда — медиа на вашем хостинге, сжатие в браузере, фирменные письма, голосование, ответы и разметка схемы. Pro добавляет критерии оценок, напоминания, купонные награды, виджеты, аналитику и SEO-страницу всех отзывов за $59 разово.</p>
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://wordpress.org/plugins/pvr-media-reviews-for-woocommerce/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Попробовать бесплатную версию</a>
+          <a href="/#pricing" class="btn btn--primary">Купить PVR Pro — $59 разово</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div id="pv-footer"></div>
+
+<script>
+(function () {
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.pvr-article__media img, .pvr-article__media .pvr-article__video-thumb'));
+  if (!nodes.length) return;
+
+  var items = nodes.map(function (node) {
+    var isVideo = node.classList.contains('pvr-article__video-thumb');
+    var video = isVideo ? node.querySelector('video') : null;
+    var source = video ? video.querySelector('source') : null;
+    var fig = node.closest('figure');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    return {
+      video: isVideo,
+      src: isVideo ? ((source && source.getAttribute('src')) || (video && video.getAttribute('src')) || '') : node.getAttribute('src'),
+      poster: video ? (video.getAttribute('poster') || '') : '',
+      caption: cap ? cap.textContent.trim() : ''
+    };
+  });
+
+  var CHEV_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+  var CHEV_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+
+  var lb = document.createElement('div');
+  lb.className = 'pvr-lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.innerHTML = '<div class="pvr-lightbox__backdrop"></div>' +
+    '<div class="pvr-lightbox__stage">' +
+      '<div class="pvr-lightbox__content"></div>' +
+      '<div class="pvr-lightbox__meta"><span class="pvr-lightbox__counter"></span><p class="pvr-lightbox__caption"></p></div>' +
+    '</div>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--prev" aria-label="Previous media">' + CHEV_L + '</button>' +
+    '<button type="button" class="pvr-lightbox__btn pvr-lightbox__btn--next" aria-label="Next media">' + CHEV_R + '</button>';
+  document.body.appendChild(lb);
+
+  var content = lb.querySelector('.pvr-lightbox__content');
+  var counter = lb.querySelector('.pvr-lightbox__counter');
+  var caption = lb.querySelector('.pvr-lightbox__caption');
+  var current = -1;
+
+  function render(index) {
+    current = (index + items.length) % items.length;
+    var item = items[current];
+    content.innerHTML = '';
+    if (item.video) {
+      var v = document.createElement('video');
+      v.controls = true;
+      v.autoplay = true;
+      v.muted = true;
+      v.playsInline = true;
+      if (item.poster) v.poster = item.poster;
+      v.src = item.src;
+      content.appendChild(v);
+    } else {
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.alt = '';
+      content.appendChild(img);
+    }
+    counter.textContent = (current + 1) + ' / ' + items.length;
+    caption.textContent = item.caption;
+  }
+
+  function open(index) {
+    render(index);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    content.innerHTML = '';
+    document.body.style.overflow = '';
+    current = -1;
+  }
+
+  function step(delta) {
+    if (current >= 0) render(current + delta);
+  }
+
+  nodes.forEach(function (node, index) {
+    node.addEventListener('click', function () { open(index); });
+  });
+
+  lb.querySelector('.pvr-lightbox__btn--close').addEventListener('click', close);
+  lb.querySelector('.pvr-lightbox__btn--prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.pvr-lightbox__btn--next').addEventListener('click', function () { step(1); });
+  lb.querySelector('.pvr-lightbox__backdrop').addEventListener('click', close);
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+
+  var touchX = null;
+  lb.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+    touchX = null;
+  }, { passive: true });
+})();
+
+
+</script>
+</main>

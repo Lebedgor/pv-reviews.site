@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — PVR Media Reviews</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .thank-you {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px 40px;
+      background: linear-gradient(180deg, var(--surface-alt) 0%, #f1f5f9 100%);
+    }
+    .thank-you__card {
+      max-width: 560px;
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+    .thank-you__icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.35);
+    }
+    .thank-you__icon svg {
+      width: 32px;
+      height: 32px;
+      color: #ffffff;
+    }
+    .thank-you__title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .thank-you__text {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .thank-you__details {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .thank-you__detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+    .thank-you__detail-row:not(:last-child) {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .thank-you__detail-label {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .thank-you__detail-value {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+    .thank-you__note {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .thank-you__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 480px) {
+      .thank-you__actions {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    .thank-you__pending {
+      display: none;
+      background: #fef3c7;
+      border: 1px solid #fbbf24;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    .thank-you__pending-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 4px;
+    }
+    .thank-you__pending-text {
+      font-size: 14px;
+      color: #a16207;
+      line-height: 1.5;
+    }
+    .thank-you__error {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    .thank-you__error-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #991b1b;
+      margin-bottom: 4px;
+    }
+    .thank-you__error-text {
+      font-size: 14px;
+      color: #dc2626;
+      line-height: 1.5;
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SVBX2VGG58"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SVBX2VGG58');
+</script>
+
+</head>
+<body>
+  <section class="thank-you">
+    <div class="thank-you__card">
+      <div class="thank-you__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <div id="pendingState" class="thank-you__pending">
+        <div class="thank-you__pending-title">Processing your payment...</div>
+        <div class="thank-you__pending-text">We're confirming your purchase. This usually takes just a moment.</div>
+      </div>
+
+      <div id="errorState" class="thank-you__error">
+        <div class="thank-you__error-title">Something went wrong</div>
+        <div class="thank-you__error-text" id="errorText"></div>
+      </div>
+
+      <div id="successState">
+        <h1 class="thank-you__title">Thank you for your purchase!</h1>
+        <p class="thank-you__text">
+          Your PVR Media Reviews Pro license is being activated. You'll receive a confirmation email with your license key and download instructions shortly.
+        </p>
+
+        <div class="thank-you__details" id="licenseDetails" style="display:none;">
+          <div class="thank-you__detail-row">
+            <span class="thank-you__detail-label">License Key</span>
+            <span class="thank-you__detail-value" id="licenseKey">—</span>
+          </div>
+          <div class="thank-you__detail-row">
+            <span class="thank-you__detail-label">Registered Domain</span>
+            <span class="thank-you__detail-value" id="licenseDomain">—</span>
+          </div>
+          <div class="thank-you__detail-row">
+            <span class="thank-you__detail-label">License</span>
+            <span class="thank-you__detail-value" style="color:#10b981;">Lifetime</span>
+          </div>
+          <div class="thank-you__detail-row">
+            <span class="thank-you__detail-label">Updates & Support Until</span>
+            <span class="thank-you__detail-value" id="licenseExpiry">—</span>
+          </div>
+        </div>
+
+        <p class="thank-you__note">
+          Check your email for the download link and installation instructions. If you don't receive an email within a few minutes, check your spam folder.
+        </p>
+
+        <div class="thank-you__actions">
+          <a href="/" class="btn btn--primary">Back to Home</a>
+          <a href="https://demo.pv-reviews.site" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">View Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get('token');
+
+      if (!token) {
+        document.getElementById('pendingState').style.display = 'none';
+        document.getElementById('errorState').style.display = 'block';
+        document.getElementById('errorText').textContent = 'No checkout token found. Please check your email for your license details.';
+        return;
+      }
+
+      // Check if we have cached license info from a previous visit
+      const cacheKey = 'pvr_license_' + token;
+      try {
+        const cached = localStorage.getItem(cacheKey);
+        if (cached) {
+          const data = JSON.parse(cached);
+          showLicense(data);
+          return;
+        }
+      } catch (e) {}
+
+      // Show pending state
+      document.getElementById('pendingState').style.display = 'block';
+      document.getElementById('successState').style.display = 'none';
+
+      // Poll for license activation (webhook may take a moment)
+      let attempts = 0;
+      const maxAttempts = 12;
+      const interval = 5000;
+
+      function checkLicense() {
+        attempts++;
+        fetch('/api/license/check.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token: token })
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (data.status === 'activated') {
+            try { localStorage.setItem(cacheKey, JSON.stringify(data)); } catch (e) {}
+            showLicense(data);
+          } else if (data.status === 'pending' && attempts < maxAttempts) {
+            setTimeout(checkLicense, interval);
+          } else if (attempts >= maxAttempts) {
+            document.getElementById('pendingState').style.display = 'none';
+            document.getElementById('successState').style.display = 'block';
+          }
+        })
+        .catch(function() {
+          if (attempts < maxAttempts) {
+            setTimeout(checkLicense, interval);
+          } else {
+            document.getElementById('pendingState').style.display = 'none';
+            document.getElementById('successState').style.display = 'block';
+          }
+        });
+      }
+
+      setTimeout(checkLicense, 2000);
+    })();
+
+    function showLicense(data) {
+      document.getElementById('pendingState').style.display = 'none';
+      document.getElementById('errorState').style.display = 'none';
+      document.getElementById('successState').style.display = 'block';
+
+      if (data.license_key) {
+        document.getElementById('licenseKey').textContent = data.license_key;
+        document.getElementById('licenseDomain').textContent = data.domain || '—';
+        document.getElementById('licenseExpiry').textContent = data.updates_until
+          ? new Date(data.updates_until + 'Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+          : 'Lifetime — updates included';
+        document.getElementById('licenseDetails').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

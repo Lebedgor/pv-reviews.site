@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Features & Settings — PVR Media Reviews</title>
+  <meta name="description" content="Complete guide to every feature and setting in PVR Media Reviews — the WooCommerce photo and video review plugin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .features-page { padding: 100px 0 80px; }
+    .features-page__hero { text-align: center; margin-bottom: 64px; }
+    .features-page__title { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; color: var(--text-primary); margin-bottom: 16px; }
+    .features-page__subtitle { font-size: 18px; color: var(--text-secondary); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+    .fp-section { margin-bottom: 72px; }
+    .fp-section__label { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-bg); padding: 4px 12px; border-radius: 99px; margin-bottom: 12px; }
+    .fp-section__label--free { color: #10b981; background: #ecfdf5; }
+    .fp-section__label--pro { color: #6366f1; background: #eef2ff; }
+    .fp-section__title { font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; letter-spacing: -0.02em; }
+    .fp-section__desc { font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; max-width: 720px; }
+    .fp-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+    .fp-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; transition: border-color 0.15s, box-shadow 0.15s; }
+    .fp-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(99,102,241,0.08); }
+    .fp-card__icon { width: 40px; height: 40px; background: var(--accent-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .fp-card__icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .fp-card__title { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+    .fp-card__text { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+    .fp-settings { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .fp-settings__row { display: flex; align-items: flex-start; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--border-subtle); }
+    .fp-settings__row:last-child { border-bottom: none; }
+    .fp-settings__name { font-size: 14px; font-weight: 600; color: var(--text-primary); min-width: 200px; flex-shrink: 0; }
+    .fp-settings__desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .fp-settings__badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+    .fp-settings__badge--free { color: #10b981; background: #ecfdf5; }
+    .fp-settings__badge--pro { color: #6366f1; background: #eef2ff; }
+    .fp-comparison { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .fp-comparison th { background: var(--surface-alt); font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; padding: 14px 20px; text-align: left; }
+    .fp-comparison td { padding: 12px 20px; font-size: 14px; color: var(--text-primary); border-top: 1px solid var(--border-subtle); }
+    .fp-comparison tr:hover td { background: var(--surface-alt); }
+    .fp-comparison__check { color: #10b981; font-weight: 700; }
+    .fp-comparison__dash { color: var(--text-muted); }
+    .fp-divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+    .fp-cta { text-align: center; padding: 48px 0; }
+    .fp-cta__title { font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+    .fp-cta__text { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+    @media (max-width: 640px) {
+      .features-page__title { font-size: 28px; }
+      .fp-settings__row { flex-direction: column; gap: 4px; }
+      .fp-settings__name { min-width: auto; }
+      .fp-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SVBX2VGG58"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SVBX2VGG58');
+</script>
+
+</head>
+<body>
+
+  <div id="pv-header"></div>
+  <script src="components/include.js"></script>
+
+  <main class="features-page">
+    <div class="container">
+
+      <div class="features-page__hero">
+        <h1 class="features-page__title">Every Feature &amp; Setting</h1>
+        <p class="features-page__subtitle">A complete guide to every feature in PVR Media Reviews — from photo and video reviews to voting, replies, and schema markup.</p>
+      </div>
+
+      <!-- ========== FREE FEATURES ========== -->
+      <section class="fp-section">
+        <span class="fp-section__label fp-section__label--free">Free Plugin</span>
+        <h2 class="fp-section__title">Core Features</h2>
+        <p class="fp-section__desc">Everything included in the free PVR Media Reviews plugin — available for free on the WordPress repository.</p>
+
+        <div class="fp-cards">
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
+            <h3 class="fp-card__title">Photo Reviews</h3>
+            <p class="fp-card__text">Customers upload real product photos directly in the review form. Multiple photos per review. Thumbnails with lightbox preview on the product page.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+            <h3 class="fp-card__title">Video Reviews</h3>
+            <p class="fp-card__text">Customers record or upload videos. MP4 and WebM formats supported. Videos play inline in a modal — no page reloads, no external links.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+            <h3 class="fp-card__title">Client-Side Video Compression</h3>
+            <p class="fp-card__text">Large videos are compressed in the browser before upload using MediaRecorder API + Canvas. No FFmpeg, no server CPU load. Configurable compression threshold and quality.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></div>
+            <h3 class="fp-card__title">Helpful Voting</h3>
+            <p class="fp-card__text">Visitors can mark reviews as "helpful". The most helpful reviews rise to the top, helping potential buyers make decisions faster.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3 class="fp-card__title">Store Replies</h3>
+            <p class="fp-card__text">Store owners can reply to any review directly from the WordPress admin. Replies are displayed publicly below the review.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <h3 class="fp-card__title">Reviewer Avatars</h3>
+            <p class="fp-card__text">Each reviewer can upload a profile photo. Avatars appear next to their reviews, adding visual trust and personalization.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3 class="fp-card__title">Schema Markup</h3>
+            <p class="fp-card__text">Automatic JSON-LD structured data for product reviews. Helps Google display star ratings and review snippets in search results.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <h3 class="fp-card__title">Email Notifications</h3>
+            <p class="fp-card__text">Automatic email to store owner when a new review is submitted. Configurable in WooCommerce email settings.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <h3 class="fp-card__title">Video Thumbnails</h3>
+            <p class="fp-card__text">Automatic thumbnail generation from video first frame. Displayed in the gallery grid before the user clicks to play.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="fp-card__title">Honeypot &amp; Anti-Spam</h3>
+            <p class="fp-card__text">Built-in invisible honeypot field protection and per-IP rate limiting to block automated bot submissions without frustrating human buyers. Optional Google reCAPTCHA v3 support.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3 class="fp-card__title">7 Languages Out of the Box</h3>
+            <p class="fp-card__text">Fully localized with bundled translation JSON files for English, Spanish, French, German, Polish, Brazilian Portuguese, and Russian.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="fp-divider">
+
+      <!-- ========== PRO FEATURES ========== -->
+      <section class="fp-section">
+        <span class="fp-section__label fp-section__label--pro">Pro Features</span>
+        <h2 class="fp-section__title">Advanced Tools</h2>
+        <p class="fp-section__desc">Everything in Free, plus SEO review pages, analytics, marketing automation, and flexible display widgets.</p>
+
+        <div class="fp-cards">
+          <div class="fp-card">
+            <div class="fp-card__icon" style="background:#eef2ff;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+            <h3 class="fp-card__title">SEO Review Pages</h3>
+            <p class="fp-card__text">A dedicated, filterable all-reviews page for your store. Each category filter gets its own auto-generated SEO title, meta description, and URL slug.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon" style="background:#eef2ff;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
+            <h3 class="fp-card__title">Custom Criteria Ratings</h3>
+            <p class="fp-card__text">Define custom rating criteria per product or globally — Quality, Value, Durability, etc. Each criterion gets its own rating bar and average score.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon" style="background:#eef2ff;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <h3 class="fp-card__title">Email Reminders</h3>
+            <p class="fp-card__text">Automatically send follow-up emails asking customers to leave a review after purchase. Configurable delay, subject line, and email template.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon" style="background:#eef2ff;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+            <h3 class="fp-card__title">Coupons for Reviews</h3>
+            <p class="fp-card__text">Automatically generate discount coupons when a customer leaves a review. Configure discount type (percentage or fixed), amount, and coupon validity period.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon" style="background:#eef2ff;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
+            <h3 class="fp-card__title">Analytics Dashboard</h3>
+            <p class="fp-card__text">Track review submissions, average ratings, and media uploads over time. Visual charts showing trends and review volume growth.</p>
+          </div>
+          <div class="fp-card">
+            <div class="fp-card__icon" style="background:#eef2ff;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+            <h3 class="fp-card__title">Carousel &amp; Grid Widgets</h3>
+            <p class="fp-card__text">Display reviews anywhere — product pages, homepage, landing pages — as a swipeable carousel or responsive grid. Use shortcodes or PHP functions.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="fp-divider">
+
+      <!-- ========== COMPARISON TABLE ========== -->
+      <section class="fp-section">
+        <h2 class="fp-section__title">Free vs Pro Comparison</h2>
+        <p class="fp-section__desc">Feature-by-feature breakdown of what's included in each version.</p>
+
+        <table class="fp-comparison">
+          <thead>
+            <tr>
+              <th style="width:50%;">Feature</th>
+              <th style="width:25%; text-align:center;">Free</th>
+              <th style="width:25%; text-align:center;">Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Photo Reviews</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Video Reviews</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Client-Side Video Compression</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Video Thumbnails</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Helpful Voting</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Store Replies</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Reviewer Avatars</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Schema Markup (JSON-LD)</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Email Notifications</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr><td>Detailed Review Modal</td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr style="background:var(--surface-alt);"><td><strong>SEO All-Reviews Page</strong></td><td style="text-align:center;"><span class="fp-comparison__dash">—</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr style="background:var(--surface-alt);"><td><strong>Auto-Generated SEO Titles &amp; Descriptions</strong></td><td style="text-align:center;"><span class="fp-comparison__dash">—</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr style="background:var(--surface-alt);"><td><strong>Custom Criteria Ratings</strong></td><td style="text-align:center;"><span class="fp-comparison__dash">—</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr style="background:var(--surface-alt);"><td><strong>Email Reminders</strong></td><td style="text-align:center;"><span class="fp-comparison__dash">—</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr style="background:var(--surface-alt);"><td><strong>Coupons for Reviews</strong></td><td style="text-align:center;"><span class="fp-comparison__dash">—</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr style="background:var(--surface-alt);"><td><strong>Analytics Dashboard</strong></td><td style="text-align:center;"><span class="fp-comparison__dash">—</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+            <tr style="background:var(--surface-alt);"><td><strong>Carousel &amp; Grid Widgets</strong></td><td style="text-align:center;"><span class="fp-comparison__dash">—</span></td><td style="text-align:center;"><span class="fp-comparison__check">&#10003;</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <hr class="fp-divider">
+
+      <!-- ========== TECHNICAL ========== -->
+      <section class="fp-section">
+        <h2 class="fp-section__title">Technical Details</h2>
+        <p class="fp-section__desc">Requirements, compatibility, and technical specifications.</p>
+
+        <div class="fp-settings">
+          <div class="fp-settings__row">
+            <span class="fp-settings__name">WordPress</span>
+            <span class="fp-settings__desc">6.0 or later</span>
+          </div>
+          <div class="fp-settings__row">
+            <span class="fp-settings__name">WooCommerce</span>
+            <span class="fp-settings__desc">7.0 or later</span>
+          </div>
+          <div class="fp-settings__row">
+            <span class="fp-settings__name">PHP</span>
+            <span class="fp-settings__desc">7.1 or higher</span>
+          </div>
+          <div class="fp-settings__row">
+            <span class="fp-settings__name">Video Formats</span>
+            <span class="fp-settings__desc">MP4 (Safari), WebM (Chrome/Edge). Auto-detected by browser.</span>
+          </div>
+          <div class="fp-settings__row">
+            <span class="fp-settings__name">Video Compression</span>
+            <span class="fp-settings__desc">Browser-side via MediaRecorder API + Canvas. No FFmpeg required. No server-side processing.</span>
+          </div>
+          <div class="fp-settings__row">
+            <span class="fp-settings__name">Database</span>
+            <span class="fp-settings__desc">Extends native WooCommerce reviews (WordPress comments). All reviews fully compatible with WooCommerce.</span>
+          </div>
+          <div class="fp-settings__row">
+            <span class="fp-settings__name">File Storage</span>
+            <span class="fp-settings__desc">Media stored in WordPress uploads directory. Standard WordPress media management.</span>
+          </div>
+          <div class="fp-settings__row">
+            <span class="fp-settings__name">Licensing</span>
+            <span class="fp-settings__desc">One-time payment. Lifetime license with all future updates and support included — no renewals.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CTA ========== -->
+      <div class="fp-cta">
+        <h2 class="fp-cta__title">Ready to get started?</h2>
+        <p class="fp-cta__text">Download the free plugin or upgrade to Pro for advanced features.</p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a href="#" class="btn btn--primary">Get PVR Pro — $39</a>
+          <a href="/" class="btn btn--secondary">Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="pv-footer"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true, offset: 80 });</script>
+</body>
+</html>
