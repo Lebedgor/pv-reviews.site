@@ -101,7 +101,9 @@
 		resendBtn.hidden = !(data.type === 'domain' && data.can_resend);
 	}
 
-	// Deep link from the plugin License tab: /renew?license=KEY
+	// Deep link from the plugin License tab: /renew?license=KEY.
+	// IMPORTANT: runs AFTER all event listeners are attached — requestSubmit
+	// before the submit handler exists does a native submit/reload instead.
 	(function prefillFromQuery() {
 		var params = new URLSearchParams(window.location.search);
 		var license = (params.get('license') || '').trim();
@@ -162,6 +164,19 @@
 			setMessage('Network error. Please try again.', true);
 		}
 	});
+
+	// Deep link auto-lookup: runs last so every handler above is attached.
+	(function prefillFromQuery() {
+		var params = new URLSearchParams(window.location.search);
+		var license = (params.get('license') || '').trim();
+		if (license === '') return;
+		lookupInput.value = license;
+		if (typeof lookupForm.requestSubmit === 'function') {
+			lookupForm.requestSubmit();
+		} else {
+			lookupForm.dispatchEvent(new Event('submit', { cancelable: true }));
+		}
+	})();
 })();
 </script>
 </section>

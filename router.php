@@ -41,9 +41,14 @@ $page = (string) preg_replace('/\.html$/', '', $page);
 $page = (string) preg_replace('/[^a-zA-Z0-9\-_]/', '', $page);
 
 // English is served without the /en/ prefix: 301 /en/* -> clean URL.
+// Preserve the query string — deep links like /en/renew?license=KEY.
 // Other languages keep their prefix (/ru/ IS canonical for Russian).
 if ($lang === 'en' && $hadExplicitLang) {
-    header('Location: ' . getPageUrl('en', $page), true, 301);
+    $queryString = isset($_SERVER['QUERY_STRING']) ? (string) $_SERVER['QUERY_STRING'] : '';
+    if ($queryString !== '') {
+        $queryString = '?' . $queryString;
+    }
+    header('Location: ' . getPageUrl('en', $page) . $queryString, true, 301);
     exit;
 }
 
