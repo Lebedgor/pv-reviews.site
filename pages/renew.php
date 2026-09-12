@@ -101,20 +101,9 @@
 		resendBtn.hidden = !(data.type === 'domain' && data.can_resend);
 	}
 
-	// Deep link from the plugin License tab: /renew?license=KEY.
-	// IMPORTANT: runs AFTER all event listeners are attached — requestSubmit
-	// before the submit handler exists does a native submit/reload instead.
-	(function prefillFromQuery() {
-		var params = new URLSearchParams(window.location.search);
-		var license = (params.get('license') || '').trim();
-		if (license === '') return;
-		lookupInput.value = license;
-		if (typeof lookupForm.requestSubmit === 'function') {
-			lookupForm.requestSubmit();
-		} else {
-			lookupForm.dispatchEvent(new Event('submit', { cancelable: true }));
-		}
-	})();
+	// Deep link prefill lives at the END of this script (runs last) — see
+	// prefillFromQuery() below. Do NOT call requestSubmit() here: before the
+	// submit handler is attached it does a native submit/reload instead.
 
 	lookupForm.addEventListener('submit', async function (e) {
 		e.preventDefault();
